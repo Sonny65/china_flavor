@@ -103,7 +103,7 @@ set_politics = {
 
 	parties = {
 		democratic = { 
-			popularity = 20
+			popularity = 25
 		}
 
 		fascism = {
@@ -111,7 +111,7 @@ set_politics = {
 		}
 		
 		communism = {
-			popularity = 10
+			popularity = 5
 			#banned = no #default is no
 		}
 		
@@ -140,7 +140,7 @@ create_country_leader = {
 create_country_leader = {
 	name = "Qinglin Song"
 	desc = "POLITICS_MAO_ZEDONG_DESC"
-	picture = "Portrait_China_Mao_Zedong.dds"
+	picture = "Portrait_China_Qinglin_Song.dds"
 	expire = "1965.1.1"
 	ideology = leninism
 	traits = {
@@ -151,7 +151,7 @@ create_country_leader = {
 create_country_leader = {
 	name = "Guofu Chen"
 	desc = "POLITICS_WANG_JINGWEI_DESC"
-	picture = "gfx/leaders/Asia/Portrait_Asia_Generic_navy_1.dds"
+	picture = "Portrait_China_Guofu_Chen.dds"
 	expire = "1965.1.1"
 	ideology = fascism_ideology
 	traits = {
@@ -160,11 +160,11 @@ create_country_leader = {
 }
 
 create_country_leader = {
-	name = "Ke Sun"
+	name = "Sen Lin"
 	desc = "POLITICS_ZHANG_LAN_DESC"
-	picture = "gfx/leaders/Asia/Portrait_Asia_Generic_navy_3.dds"
+	picture = "Portrait_China_Sen_Lin.dds"
 	expire = "1965.1.1"
-	ideology = socialism
+	ideology = liberalism
 	traits = {
 		toothless_idealist
 	}
@@ -202,36 +202,36 @@ add_opinion_modifier = { target = PRC modifier = hostile_status }
 }
 
 create_field_marshal = {
-	name = "Tu Yu-ming"
-	portrait_path = "gfx/leaders/Asia/Portrait_Asia_Generic_land_2.dds"
+	name = "Yuming Du"
+	portrait_path = "Portrait_China_Yuming_Du.dds"
 	traits = { defensive_doctrine }
+	skill = 2
+}
+
+create_field_marshal = {
+	name = "Yue Xue"
+	portrait_path = "Portrait_China_Xue_Yue.dds"
+	traits = { offensive_doctrine }
 	skill = 4
 }
 
 create_field_marshal = {
-	name = "Hsueh Yueh"
-	portrait_path = "gfx/leaders/Asia/Portrait_Asia_Generic_land_5.dds"
-	traits = { offensive_doctrine }
-	skill = 3
-}
-
-create_field_marshal = {
-	name = "Tai An-lan"
-	portrait_path = "gfx/leaders/Asia/Portrait_Asia_Generic_land_3.dds"
+	name = "Anlan Dai"
+	portrait_path = "Portrait_China_Dai_Anlan.dds"
 	traits = {  offensive_doctrine }
 	skill = 3
 }
 
 create_field_marshal = {
-	name = "Wang Yao-wu"
-	portrait_path = "gfx/leaders/Asia/Portrait_Asia_Generic_land_4.dds"
+	name = "Yaowu Wang"
+	portrait_path = "Portrait_China_Wang_Yaowu.dds"
 	traits = { defensive_doctrine }
 	skill = 2
 }
 
 create_field_marshal = {
 	name = "Zizhong Zhang"
-	portrait_path = "gfx/leaders/Asia/Portrait_Asia_Generic_land_1.dds"
+	portrait_path = "Portrait_China_Zhang_Zizhong.dds"
 	traits = { defensive_doctrine }
-	skill = 3
+	skill = 2
 }
