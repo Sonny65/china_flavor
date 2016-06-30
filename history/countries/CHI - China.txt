@@ -133,7 +133,7 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = despotism
 	traits = {
-		hesitant_leader
+		hesitant_steed
 	}
 }
 
@@ -144,7 +144,7 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = leninism
 	traits = {
-		#
+		mother_of_republic
 	}
 }
 
@@ -155,18 +155,18 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = fascism_ideology
 	traits = {
-		#
+		party_head
 	}
 }
 
 create_country_leader = {
-	name = "Jishen Li"
+	name = "Ke Sun"
 	desc = "POLITICS_ZHANG_LAN_DESC"
 	picture = "gfx/leaders/Asia/Portrait_Asia_Generic_navy_3.dds"
 	expire = "1965.1.1"
 	ideology = socialism
 	traits = {
-		#
+		toothless_idealist
 	}
 }
 
