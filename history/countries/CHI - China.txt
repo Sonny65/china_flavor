@@ -46,8 +46,8 @@ set_convoys = 40
 		#ministers
 		CHI_song_ziwen
 		CHI_kong_xiangxi
-		CHI_bo_yibo
-		CHI_xiao_yisu
+		CHI_yang_jie
+		CHI_song_zheyuan
 		CHI_chen_shaokuan
 		jiangnan_shipyard_group
 	}

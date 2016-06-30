@@ -294,7 +294,7 @@ ideas = {
 	
 		tianjin_machine = {
 			
-			picture = generic_tank_manufacturer_3
+			picture = generic_tank_manufacturer_1
 			
 			allowed = {
 				original_tag = CHI
@@ -305,7 +305,7 @@ ideas = {
 				armor = 0.10
 			}
 			
-			traits = { heavy_tank_manufacturer }
+			traits = { fast_tank_manufacturer }
 			
 			modifier = {
 			}
@@ -323,7 +323,7 @@ ideas = {
 
 			
 			research_bonus = {
-				armor = 0.10
+				armor = 0.08
 			}
 			
 			traits = { medium_tank_manufacturer }
@@ -332,6 +332,26 @@ ideas = {
 			}
 		}
 		
+		jinling_machine = {
+			
+			
+			picture = generic_tank_manufacturer_3
+			
+			allowed = {
+				original_tag = CHI
+			}	
+			
+
+			
+			research_bonus = {
+				armor = 0.5
+			}
+			
+			traits = { heavy_tank_manufacturer }
+			
+			modifier = {
+			}
+		}
 	}
 	
 	naval_manufacturer = { 
@@ -339,7 +359,7 @@ ideas = {
 		designer = yes
 		
 		jiangnan_shipyard_group = {
-			picture = generic_naval_manufacturer_3
+			picture = generic_naval_manufacturer_1
 
 			
 			allowed = {
@@ -352,9 +372,46 @@ ideas = {
 			
 			# riverine warfare weak on open waters
 						
-			traits = { naval_manufacturer }
+			traits = { coastal_defence_naval_manufacturer }
 			
 		}
+		
+		fuzhou_ship_building_bureau = {
+			picture = generic_naval_manufacturer_2
+
+			
+			allowed = {
+				original_tag = CHI
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.10
+			}
+			
+			# riverine warfare weak on open waters
+						
+			traits = { pacific_fleet_naval_manufacturer }
+			
+		}
+		
+		merchants_steamship_company = {
+			picture = generic_naval_manufacturer_1
+
+			
+			allowed = {
+				original_tag = CHI
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.10
+			}
+			
+			# riverine warfare weak on open waters
+						
+			traits = { convoy_escort_naval_manufacturer }
+			
+		}
+		
 	}
 	
 	aircraft_manufacturer = { #
@@ -381,13 +438,160 @@ ideas = {
 				factor = 1
 			}
 		}
+		
+		hongdu_airfield = {
+			picture = generic_air_manufacturer_1
+
+			
+			allowed = {
+				original_tag = CHI
+			}
+			
+			research_bonus = {
+				air_equipment = 0.10
+			}
+			
+			traits = { light_aircraft_manufacturer }
+						
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		chengdu_airfield = {
+			picture = generic_air_manufacturer_2
+
+			
+			allowed = {
+				original_tag = CHI
+			}
+			
+			research_bonus = {
+				air_equipment = 0.10
+			}
+			
+			traits = { CAS_manufacturer }
+						
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	materiel_manufacturer = {
+			
+		designer = yes
+		
+		hanyang_arsenal = {
+			
+			picture = generic_infantry_equipment_manufacturer_2
+			
+			allowed = {
+				original_tag = CHI
+			}
+			
+
+			
+			research_bonus = {
+				infantry_weapons = 0.10
+			}
+			
+			traits = { infantry_equipment_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+		anqing_armory = {
+			
+			picture = generic_motorized_equipment_manufacturer_2
+			
+			allowed = {
+				original_tag = CHI
+			}
+			
+
+			
+			research_bonus = {
+				motorized_equipment = 0.10
+			}
+			
+			traits = { motorized_equipment_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+	
+		
+		hubei_arsenal = {
+			
+			picture = generic_infantry_equipment_manufacturer_3
+			
+			allowed = {
+				original_tag = CHI
+			}
+			
+
+			
+			research_bonus = {
+				artillery = 0.10
+			}
+			
+			traits = { artillery_manufacturer }
+			
+			modifier = {
+			}
+		}
 	}
 
+	industrial_concern = {
+					
+		resource_committee = {
+			
+			picture = generic_industrial_concern_2
+			
+			allowed = {
+				original_tag = CHI
+			}
+			
+
+			
+			research_bonus = {
+				industry = 0.10
+			}
+			
+			traits = { industrial_concern }
+			
+			modifier = {
+			}
+		}
+		
+		telegram_academy = {
+			
+			picture = generic_electronics_concern_2
+			
+			allowed = {
+				original_tag = CHI
+			}
+			
+
+			
+			research_bonus = {
+				electronics = 0.10
+			}
+			
+			traits = { electronics_concern }
+			
+			modifier = {
+			}
+		}
+	}
 
 	theorist = {
-		CHI_bo_yibo = {
+		CHI_yang_jie = {
 
-			picture = generic_army_asia_2
+			picture = generic_army_asia_1
 			
 			allowed = {
 				original_tag = CHI
@@ -417,7 +621,7 @@ ideas = {
 
 		CHI_huang_shen = {
 
-			picture = generic_navy_asia_2
+			picture = generic_navy_asia_3
 			
 			allowed = {
 				original_tag = CHI
@@ -437,7 +641,7 @@ ideas = {
 
 		CHI_gao_zhihang = {
 
-			picture = generic_air_asia_2
+			picture = generic_air_asia_1
 			
 			allowed = {
 				original_tag = CHI
@@ -450,7 +654,7 @@ ideas = {
 			}
 		}
 		
-		CHI_xiao_yisu = {
+		CHI_song_zheyuan = {
 
 			picture = generic_army_asia_2
 			
@@ -458,14 +662,14 @@ ideas = {
 				original_tag = CHI
 			}
 			
-			traits = { army_infantry_2 }
+			traits = { army_infantry_3 }
 			
 			ai_will_do = {
 				factor = 1
 			}
 		}
 
-		CHI_chen_cheng = {
+		CHI_zhang_xueliang = {
 
 			picture = generic_army_asia_3
 			
@@ -473,14 +677,14 @@ ideas = {
 				original_tag = CHI
 			}
 			
-			traits = { army_regrouping_2 }
+			traits = { army_regrouping_3 }
 			
 			ai_will_do = {
 				factor = 1
 			}
 		}
 
-		CHI_yu_hanmou = {
+		CHI_liu_xiang = {
 
 			picture = generic_army_asia_1
 			
@@ -488,7 +692,7 @@ ideas = {
 				original_tag = CHI
 			}
 			
-			traits = { army_logistics_2 }
+			traits = { army_logistics_3 }
 			
 			ai_will_do = {
 				factor = 1
