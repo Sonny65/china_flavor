@@ -71,7 +71,7 @@ ideas = {
 
 	political_advisor = {
 
-		CHI_xie_juezai = {
+		CHI_song_ziwen = {
 
 			picture = generic_political_advisor_asia_1
 			
@@ -79,10 +79,10 @@ ideas = {
 				original_tag = CHI
 			}
 			
-			traits = { silent_workhorse }
+			traits = { captain_of_industry }
 		}
 
-		CHI_deng_xiaoping = {
+		CHI_kong_xiangxi = {
 
 			picture = generic_political_advisor_asia_2
 				
@@ -90,10 +90,10 @@ ideas = {
 				original_tag = CHI
 			}
 			
-			traits = { captain_of_industry }
+			traits = { economy_revolutionist }
 		}
 
-		CHI_chen_yi = {
+		CHI_jiang_baili = {
 
 			picture = generic_political_advisor_asia_3
 			
@@ -101,15 +101,15 @@ ideas = {
 				original_tag = CHI
 			}
 			
-			traits = { compassionate_gentleman }
+			traits = { military_genius }
 		}
 	}	
 
 	army_chief = {
+	
+		#Nationalist
 		
-		#Communist
-
-		CHI_zhu_de = {
+		CHI_yue_xue = {
 			
 			picture = generic_army_asia_1
 
@@ -117,16 +117,14 @@ ideas = {
 				original_tag = CHI
 			}
 			
-			traits = { army_chief_offensive_2 }
+			traits = { army_chief_offensive_3 }
 			
 			ai_will_do = {
 				factor = 1
 			}
 		}
 
-		#Clique
-
-		CHI_chen_jitang = {
+		CHI_bai_chongxi = {
 
 			picture = generic_army_asia_2
 			
@@ -134,18 +132,14 @@ ideas = {
 				original_tag = CHI
 			}
 			
-
-			
-			traits = { army_chief_organizational_2 }
+			traits = { army_chief_organizational_3 }
 			
 			ai_will_do = {
 				factor = 1
 			}
 		}
 
-		#Nationalist
-
-		CHI_li_zongren = {
+		CHI_tang_enbo = {
 			
 			picture = generic_army_asia_3
 
@@ -168,7 +162,7 @@ ideas = {
 				original_tag = CHI
 			}
 						
-			traits = { army_chief_maneuver_2 }
+			traits = { army_chief_maneuver_3 }
 			
 			ai_will_do = {
 				factor = 1
@@ -184,8 +178,25 @@ ideas = {
 		#army_aviation_doctrine
 
 
-		#Clique
+		#Nationalist
+		
+		CHI_chen_nade = {
+			
+			picture = generic_air_europe_3
+			
+			allowed = {
+				original_tag = CHI
+			}
+			
 
+			
+			traits = { air_air_combat_training_3 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
 		CHI_wang_shuming = {
 			
 			picture = generic_air_asia_1
@@ -202,8 +213,6 @@ ideas = {
 				factor = 1
 			}
 		}
-
-		#Nationalist
 
 		CHI_zhou_zhirou = {
 
@@ -244,7 +253,7 @@ ideas = {
 
 		#Clique
 
-		CHI_bai_chongxi = {
+		CHI_gui_yongqing = {
 			
 			picture = generic_navy_asia_2
 
@@ -279,6 +288,51 @@ ideas = {
 
 
 	# TECHNOLOGY
+	tank_manufacturer = { 
+	
+		designer = yes
+	
+		tianjin_machine = {
+			
+			picture = generic_tank_manufacturer_3
+			
+			allowed = {
+				original_tag = CHI
+			}			
+
+			
+			research_bonus = {
+				armor = 0.10
+			}
+			
+			traits = { heavy_tank_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+		xian_machine = {
+			
+			
+			picture = generic_tank_manufacturer_2
+			
+			allowed = {
+				original_tag = CHI
+			}	
+			
+
+			
+			research_bonus = {
+				armor = 0.10
+			}
+			
+			traits = { medium_tank_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+	}
 	
 	naval_manufacturer = { 
 		
