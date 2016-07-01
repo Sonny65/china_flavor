@@ -203,35 +203,35 @@ add_opinion_modifier = { target = PRC modifier = hostile_status }
 
 create_field_marshal = {
 	name = "Yuming Du"
-	portrait_path = "Portrait_China_Yuming_Du.dds"
+	portrait_path = "gfx/leaders/CHI/Portrait_China_Yuming_Du.dds"
 	traits = { defensive_doctrine }
 	skill = 2
 }
 
 create_field_marshal = {
 	name = "Yue Xue"
-	portrait_path = "Portrait_China_Xue_Yue.dds"
+	portrait_path = "gfx/leaders/CHI/Portrait_China_Xue_Yue.dds"
 	traits = { offensive_doctrine }
 	skill = 4
 }
 
 create_field_marshal = {
 	name = "Anlan Dai"
-	portrait_path = "Portrait_China_Dai_Anlan.dds"
+	portrait_path = "gfx/leaders/CHI/Portrait_China_Dai_Anlan.dds"
 	traits = {  offensive_doctrine }
 	skill = 3
 }
 
 create_field_marshal = {
 	name = "Yaowu Wang"
-	portrait_path = "Portrait_China_Wang_Yaowu.dds"
+	portrait_path = "gfx/leaders/CHI/Portrait_China_Wang_Yaowu.dds"
 	traits = { defensive_doctrine }
 	skill = 2
 }
 
 create_field_marshal = {
 	name = "Zizhong Zhang"
-	portrait_path = "Portrait_China_Zhang_Zizhong.dds"
+	portrait_path = "gfx/leaders/CHI/Portrait_China_Zhang_Zizhong.dds"
 	traits = { defensive_doctrine }
 	skill = 2
 }
