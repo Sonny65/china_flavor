@@ -1,0 +1,230 @@
+focus_tree = {
+	id = china_focus
+	
+	country = {
+		factor = 0
+
+		modifier = {
+			add = 10
+			tag = CHI
+		}
+	}
+	
+	default = no
+	reset_on_civilwar = no
+
+	focus = {
+		id = reorganize_nra                                
+		icon = GFX_goal_generic_army_doctrines
+		x = 3
+		y = 0
+		cost = 10
+		completion_reward = {
+			army_experience = 50
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = employ_western_officers                                
+		icon = GFX_goal_generic_military_deal
+		prerequisite = { focus = reorganize_nra }
+		x = 3
+		y = 1
+		cost = 10
+		completion_reward = {
+			army_experience = 50
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+		
+	focus = {
+		id = continue_sino_german_cooperation                                
+		icon = GFX_goal_generic_axis_build_infantry
+		prerequisite = { focus = employ_western_officers }
+		mutually_exclusive = { focus = ussr_support focus = democratic_armory }
+		available =
+		{
+			has_idea = german_advisors
+		}
+		cancel = {
+			NOT = { has_idea = german_advisors }
+		}
+		x = 1
+		y = 2
+		cost = 10
+		completion_reward = {
+			army_experience = 25
+			air_experience = 25
+			add_popularity = {
+					ideology = fascism
+					popularity = 0.02
+				}
+			add_tech_bonus = {
+				name = sub_op_bonus
+				bonus = 0.25
+				uses = 1
+				category = light_fighter
+				category = tactical_bomber
+			}
+			add_tech_bonus = {
+				name = infantry_equipment
+				bonus = 0.5
+				uses = 2
+				category = infantry_tech
+				category = infantry_weapons 
+			}
+		}
+	}
+	
+	focus = {
+		id = ussr_support                                
+		icon = GFX_goal_generic_build_tank
+		prerequisite = { focus = employ_western_officers }
+		available = {
+			country_exists = SOV
+			NOT = { has_war_with = SOV }
+		}
+		mutually_exclusive = { focus = continue_sino_german_cooperation focus = democratic_armory }
+		x = 3
+		y = 2
+		cost = 10
+		completion_reward = {
+			army_experience = 50
+			add_popularity = {
+				ideology = communism
+				popularity = 0.10
+			}
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.25
+				uses = 1
+				category = armor
+			}
+			add_tech_bonus = {
+				name = infantry_equipment
+				bonus = 0.5
+				uses = 2
+				category = infantry_tech
+				category = infantry_weapons 
+				category = artillery
+			}
+		}
+	}
+	
+	focus = {
+		id = democratic_armory                                
+		icon = GFX_goal_generic_allies_build_infantry
+		prerequisite = { focus = employ_western_officers }
+		available = {
+			country_exists = ENG
+			NOT = { has_war_with = ENG }
+		}
+		mutually_exclusive = { focus = continue_sino_german_cooperation focus = ussr_support}
+		x = 5
+		y = 2
+		cost = 10
+		completion_reward = {
+			army_experience = 15
+			air_experience = 35
+			add_tech_bonus = {
+				name = sub_op_bonus
+				bonus = 0.5
+				uses = 2
+				category = light_fighter
+				category = tactical_bomber
+			}
+			add_tech_bonus = {
+				name = infantry_equipment
+				bonus = 0.25
+				uses = 1
+				category = infantry_tech
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+	}
+	
+	focus = {
+		id = extend_terms                                
+		icon = GFX_goal_generic_dangerous_deal
+		prerequisite = { focus = continue_sino_german_cooperation }
+		available = {
+			country_exists = GER
+			is_puppet = no
+			NOT = { has_war_with = GER }
+			NOT = { has_global_flag = oust_germans }
+		}
+		cancel = {
+			has_war_with = GER
+		}
+		x = 1
+		y = 3
+		cost = 10
+		completion_reward = {
+			CHI = {
+				country_event = { days = 1 id = china.1000 }
+			}
+		}
+	}
+	
+	focus = {
+		id = restablish_united_front                                
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = ussr_support }
+		available = {
+			country_exists = PRC
+			country_exists = SOV
+			NOT = { has_war_with = SOV }
+		}
+		x = 3
+		y = 3
+		cost = 10
+		completion_reward = {
+			SOV = { country_event = { id = soviet.18 days = 1 } }
+			add_popularity = {
+				ideology = communism
+				popularity = 0.10
+			}
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+			add_tech_bonus = {
+				name = infantry_equipment
+				bonus = 0.5
+				uses = 1
+				category = infantry_tech
+				category = infantry_weapons 
+				category = artillery
+			}
+			remove_ideas = CHI_communist_uprisings
+		}
+	}
+	
+	focus = {
+		id = arms_trade                                
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = democratic_armory }
+		available = {
+			country_exists = ENG
+			NOT = { has_war_with = ENG }
+		}
+		x = 5
+		y = 3
+		cost = 10
+		completion_reward = {
+			CHI = {
+				country_event = { days = 1 id = china.1003 }
+			}
+		}
+	}
+	
+}
