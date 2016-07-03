@@ -22,6 +22,56 @@ spriteTypes = {
 	}
 	
 	spriteType = {
+		name = "GFX_report_event_farewell_dinner"
+		texturefile = "gfx/event_pictures/report_event_farewell_dinner.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_tsingtao"
+		texturefile = "gfx/event_pictures/report_event_tsingtao.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_mine_workers"
+		texturefile = "gfx/event_pictures/report_event_mine_workers.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_foreigners"
+		texturefile = "gfx/event_pictures/report_event_foreigners.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_jiang_speech"
+		texturefile = "gfx/event_pictures/report_event_jiang_speech.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_news_event_1000"
+		texturefile = "gfx/event_pictures/news_event_1000.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_news_event_1001"
+		texturefile = "gfx/event_pictures/news_event_1001.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_news_event_1002"
+		texturefile = "gfx/event_pictures/news_event_1002.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_news_event_1003"
+		texturefile = "gfx/event_pictures/news_event_1003.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_news_event_1004"
+		texturefile = "gfx/event_pictures/news_event_1004.dds"
+	}
+	
+	spriteType = {
 		name = "GFX_report_event_generic_funeral"
 		texturefile = "gfx/event_pictures/report_event_generic_funeral.dds"
 	}

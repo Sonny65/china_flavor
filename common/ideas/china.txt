@@ -395,7 +395,7 @@ ideas = {
 		}
 		
 		merchants_steamship_company = {
-			picture = generic_naval_manufacturer_1
+			picture = generic_naval_manufacturer_3
 
 			
 			allowed = {

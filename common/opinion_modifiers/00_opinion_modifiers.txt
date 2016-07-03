@@ -19,6 +19,10 @@ opinion_modifiers = {
 		value = -60
 	}
 	
+	foreign_support = {
+		value = 60
+	}
+	
 	ger_accept_chi = {
 		value = 60
 	}

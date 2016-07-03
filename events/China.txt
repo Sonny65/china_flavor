@@ -114,7 +114,212 @@ country_event = {
 	
 	option = {
 		name = china.1004.a
+		CHI = {
+			add_opinion_modifier = { target = ROOT modifier = foreign_support }
+		}
 		add_opinion_modifier = { target = CHI modifier = chi_promise_focus }
+		add_political_power = 100
+		hidden_effect = {
+			CHI = { country_event = { days = 20 id = china.1005 } }
+		}
+	}
+}
+# China choose other country over Germany
+country_event = {
+	id = china.1005
+	title = china.1005.t
+	desc = china.1005.d
+	picture = GFX_report_event_farewell_dinner
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = china.1005.a
+		remove_ideas = german_advisors
+	}
+}
+
+# development in Shandong
+country_event = {
+	id = china.1006
+	title = china.1006.t
+	desc = china.1006.d
+	picture = GFX_report_event_tsingtao
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = china.1006.a
+		597 = {
+			add_extra_state_shared_building_slots = 12
+			add_building_construction = {
+				type = infrastructure
+				level = 4
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = air_base
+				level = 4
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 4
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = dockyard
+				level = 2
+				instant_build = yes
+			}
+			add_resource = { type = oil amount = 60 state = 597 }
+			add_resource = { type = steel amount = 40 state = 597 }
+		}
+		hidden_effect = {
+			set_global_flag = developed_tsingdao
+		}
+	}
+}
+
+# development in Jiangxi
+country_event = {
+	id = china.1007
+	title = china.1007.t
+	desc = china.1007.d
+	picture = GFX_report_event_mine_workers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = china.1007.a
+		600 = {
+			add_extra_state_shared_building_slots = 10
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = air_base
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = arms_factory
+				level = 6
+				instant_build = yes
+			}
+			add_resource = { type = steel amount = 10 state = 600 }
+			add_resource = { type = aluminium amount = 30 state = 600 }
+			add_resource = { type = chromium amount = 30 state = 600 }
+			add_resource = { type = tungsten amount = 30 state = 600 }
+		}
+		hidden_effect = {
+			set_global_flag = developed_jiangxi
+		}
+	}
+}
+
+# development in Xiamen
+country_event = {
+	id = china.1008
+	title = china.1008.t
+	desc = china.1008.d
+	picture = GFX_report_event_foreigners
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = china.1008.a
+		595 = {
+			add_extra_state_shared_building_slots = 14
+			add_building_construction = {
+				type = infrastructure
+				level = 4
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = air_base
+				level = 4
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 4
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = dockyard
+				level = 4
+				instant_build = yes
+			}
+			add_resource = { type = steel amount = 30 state = 595 }
+			add_resource = { type = oil amount = 30 state = 595 }
+			add_resource = { type = rubber amount = 40 state = 595 }
+		}
+		hidden_effect = {
+			set_global_flag = developed_xiamen
+		}
+	}
+}
+
+# development in Chengdu
+country_event = {
+	id = china.1009
+	title = china.1009.t
+	desc = china.1009.d
+	picture = GFX_report_event_jiang_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = china.1009.a
+		605 = {
+			add_extra_state_shared_building_slots = 16
+			add_building_construction = {
+				type = infrastructure
+				level = 4
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = air_base
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 4
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = arms_factory
+				level = 4
+				instant_build = yes
+			}
+			add_resource = { type = steel amount = 30 state = 605 }
+			add_resource = { type = oil amount = 20 state = 605 }
+			add_resource = { type = aluminium amount = 30 state = 605 }
+			add_resource = { type = chromium amount = 30 state = 605 }
+			add_resource = { type = tungsten amount = 10 state = 605 }
+		}
+		hidden_effect = {
+			set_global_flag = developed_chengdu
+		}
 	}
 }
 
@@ -905,7 +1110,10 @@ country_event = {
 	trigger = {
 		has_global_flag = CHI_unite
 		tag = SIK
-		GER = { has_war_with = SOV }
+		OR = {
+			GER = { has_war_with = SOV }
+			has_global_flag = CHI_USSR_focus
+		}
 		CHI = {
 			has_war_with = JAP 
 			has_defensive_war = yes
@@ -938,6 +1146,10 @@ country_event = {
 				GER = {
 					is_in_faction_with = JAP
 				}
+			}
+			modifier = {
+				add = 100
+				has_global_flag = CHI_USSR_focus
 			}
 		}
 		effect_tooltip = {
@@ -1354,6 +1566,7 @@ country_event = {
 			has_government = communism
 		}
 		communism > 0.3
+		NOT = { has_global_flag = CHI_USSR_focus }
 	}
 
 	mean_time_to_happen = {
