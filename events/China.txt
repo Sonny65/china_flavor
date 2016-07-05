@@ -131,6 +131,7 @@ country_event = {
 	desc = china.1005.d
 	picture = GFX_report_event_farewell_dinner
 	
+	fire_only_once = yes
 	is_triggered_only = yes
 	
 	option = {
@@ -320,6 +321,1160 @@ country_event = {
 		hidden_effect = {
 			set_global_flag = developed_chengdu
 		}
+	}
+}
+
+# French Accept Demand
+country_event = {
+	id = china.1010
+	title = china.1010.t
+	desc = china.1010.d
+	picture = GFX_report_event_chinese_soldiers_marching
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = china.1010.a
+		hidden_effect = {
+			news_event = { days = 5 id = news.1009 }
+			add_named_threat = { threat = 5 name = france.1000.t }
+			set_global_flag = chi_demand_indochina
+		}
+		CHI = {
+			if = {
+				limit = {
+					728 = {
+						is_owned_by = FRA
+						OR = {
+							is_controlled_by = FRA
+							is_controlled_by = CHI
+						}
+					}
+				}
+				transfer_state = 728
+			}
+			if = {
+				limit = {
+					286 = {
+						is_owned_by = FRA
+						OR = {
+							is_controlled_by = FRA
+							is_controlled_by = CHI
+						}
+					}
+				}
+				transfer_state = 286
+			}
+			if = {
+				limit = {
+					670 = {
+						is_owned_by = FRA
+						OR = {
+							is_controlled_by = FRA
+							is_controlled_by = CHI
+						}
+					}
+				}
+				transfer_state = 670
+			}
+			if = {
+				limit = {
+					671 = {
+						is_owned_by = FRA
+						OR = {
+							is_controlled_by = FRA
+							is_controlled_by = CHI
+						}
+					}
+				}
+				transfer_state = 671
+			}
+		}
+	}
+}
+
+# French Reject Demand
+country_event = {
+	id = china.1011
+	title = china.1011.t
+	desc = china.1011.d
+	picture = GFX_report_event_chinese_soldiers_marching
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = china.1011.a
+		hidden_effect = { set_global_flag = chi_demand_indochina }
+	}
+}
+
+# Japan Demand Peace 1
+country_event = {
+	id = china.1012
+	title = china.1012.t
+	desc = china.1012.d
+	picture = GFX_report_event_japanese_pow
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = china.1012.a
+		ai_chance = { factor = 50 }
+		hidden_effect = {# Liberate
+			news_event = { days = 5 id = news.1010 }
+			CHI = {
+				 white_peace=JAP
+			}
+			PRC = {
+				 white_peace=JAP
+			}
+			every_country = {
+				limit = {
+                    is_in_faction_with = JAP
+                    NOT = { tag = JAP }
+                }
+				white_peace = PRC
+				white_peace = CHI
+            }
+			CHI = {
+				add_state_core = 526
+				add_state_core = 537
+			}
+			PRC = {
+				add_state_core = 526
+				add_state_core = 537
+			}
+			CHI= {
+				if = {
+					limit = {
+						609 = {
+							AND = {
+								is_owned_by = JAP
+								OR = {
+									is_controlled_by = PRC
+									is_controlled_by = CHI
+									is_controlled_by = JAP
+								}
+							}
+						}
+					}
+					transfer_state = 609
+				}
+				if = {
+					limit = {
+						610 = {
+							AND = {
+								is_owned_by = JAP
+								OR = {
+									is_controlled_by = PRC
+									is_controlled_by = CHI
+									is_controlled_by = JAP
+								}
+							}
+						}
+					}
+					transfer_state = 610
+				}
+				if = {
+					limit = {
+						716 = {
+							AND = {
+								is_owned_by = JAP
+								OR = {
+									is_controlled_by = PRC
+									is_controlled_by = CHI
+									is_controlled_by = JAP
+								}
+							}
+						}
+					}
+					transfer_state = 716
+				}
+				if = {
+					limit = {
+						328 = {
+							AND = {
+								is_owned_by = JAP
+								OR = {
+									is_controlled_by = PRC
+									is_controlled_by = CHI
+									is_controlled_by = JAP
+								}
+							}
+						}
+					}
+					transfer_state = 328
+				}
+				if = {
+					limit = {
+						715 = {
+							AND = {
+								is_owned_by = JAP
+								OR = {
+									is_controlled_by = PRC
+									is_controlled_by = CHI
+									is_controlled_by = JAP
+								}
+							}
+						}
+					}
+					transfer_state = 715
+				}
+				if = {
+					limit = {
+						714 = {
+							AND = {
+								is_owned_by = JAP
+								OR = {
+									is_controlled_by = PRC
+									is_controlled_by = CHI
+									is_controlled_by = JAP
+								}
+							}
+						}
+					}
+					transfer_state = 714
+				}
+				if = {
+					limit = {
+						717 = {
+							AND = {
+								is_owned_by = JAP
+								OR = {
+									is_controlled_by = PRC
+									is_controlled_by = CHI
+									is_controlled_by = JAP
+								}
+							}
+						}
+					}
+					transfer_state = 717
+				}
+				if = {
+					limit = {
+						612 = {
+							AND = {
+								is_owned_by = MEN
+								OR = {
+									is_controlled_by = PRC
+									is_controlled_by = CHI
+									is_controlled_by = MEN
+								}
+							}
+						}
+					}
+					transfer_state = 612
+				}
+				if = {
+					limit = {
+						611 = {
+							AND = {
+								is_owned_by = MEN
+								OR = {
+									is_controlled_by = PRC
+									is_controlled_by = CHI
+									is_controlled_by = MEN
+								}
+							}
+						}
+					}
+					transfer_state = 611
+				}
+				if = {
+					limit = {
+						524 = {
+							AND = {
+								is_owned_by = JAP
+								OR = {
+									is_controlled_by = PRC
+									is_controlled_by = CHI
+									is_controlled_by = JAP
+								}
+							}
+						}
+					}
+					transfer_state = 524
+				}
+				if = {
+					limit = {
+						526 = {
+							AND = {
+								is_owned_by = JAP
+								OR = {
+									is_controlled_by = PRC
+									is_controlled_by = CHI
+									is_controlled_by = JAP
+								}
+							}
+						}
+					}
+					transfer_state = 526
+				}
+			}
+		}	
+	}
+	option = {
+		name = china.1012.b
+		ai_chance = { factor = 50 }
+	}
+}
+
+# Japan Demand Peace 2
+country_event = {
+	id = china.1013
+	title = china.1013.t
+	desc = china.1013.d
+	picture = GFX_report_event_japanese_pow2
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = china.1013.a
+		ai_chance = { factor = 25 }
+		hidden_effect = {# Take all
+			news_event = { days = 5 id = news.1010 }
+			CHI = {
+				 white_peace=JAP
+			}
+			PRC = {
+				 white_peace=JAP
+			}
+			if = {
+				limit = { country_exists = MEN }
+				annex_country = { target = MEN }
+			}
+			every_country = {
+				limit = {
+                    is_in_faction_with = JAP
+                    NOT = { tag = JAP }
+                }
+				white_peace = PRC
+				white_peace = CHI
+            }
+			CHI = {
+				add_state_core = 526
+				add_state_core = 537
+			}
+			PRC = {
+				add_state_core = 526
+				add_state_core = 537
+			}
+			CHI= {
+				if = {
+					limit = {
+						609 = {
+							AND = {
+								is_owned_by = JAP
+								OR = {
+									is_controlled_by = PRC
+									is_controlled_by = CHI
+									is_controlled_by = JAP
+								}
+							}
+						}
+					}
+					transfer_state = 609
+				}
+				if = {
+					limit = {
+						610 = {
+							AND = {
+								is_owned_by = JAP
+								OR = {
+									is_controlled_by = PRC
+									is_controlled_by = CHI
+									is_controlled_by = JAP
+								}
+							}
+						}
+					}
+					transfer_state = 610
+				}
+				if = {
+					limit = {
+						716 = {
+							AND = {
+								is_owned_by = JAP
+								OR = {
+									is_controlled_by = PRC
+									is_controlled_by = CHI
+									is_controlled_by = JAP
+								}
+							}
+						}
+					}
+					transfer_state = 716
+				}
+				if = {
+					limit = {
+						328 = {
+							AND = {
+								is_owned_by = JAP
+								OR = {
+									is_controlled_by = PRC
+									is_controlled_by = CHI
+									is_controlled_by = JAP
+								}
+							}
+						}
+					}
+					transfer_state = 328
+				}
+				if = {
+					limit = {
+						715 = {
+							AND = {
+								is_owned_by = JAP
+								OR = {
+									is_controlled_by = PRC
+									is_controlled_by = CHI
+									is_controlled_by = JAP
+								}
+							}
+						}
+					}
+					transfer_state = 715
+				}
+				if = {
+					limit = {
+						714 = {
+							AND = {
+								is_owned_by = JAP
+								OR = {
+									is_controlled_by = PRC
+									is_controlled_by = CHI
+									is_controlled_by = JAP
+								}
+							}
+						}
+					}
+					transfer_state = 714
+				}
+				if = {
+					limit = {
+						717 = {
+							AND = {
+								is_owned_by = JAP
+								OR = {
+									is_controlled_by = PRC
+									is_controlled_by = CHI
+									is_controlled_by = JAP
+								}
+							}
+						}
+					}
+					transfer_state = 717
+				}
+				if = {
+					limit = {
+						612 = {
+							AND = {
+								is_owned_by = MEN
+								OR = {
+									is_controlled_by = PRC
+									is_controlled_by = CHI
+									is_controlled_by = MEN
+								}
+							}
+						}
+					}
+					transfer_state = 612
+				}
+				if = {
+					limit = {
+						611 = {
+							AND = {
+								is_owned_by = MEN
+								OR = {
+									is_controlled_by = PRC
+									is_controlled_by = CHI
+									is_controlled_by = MEN
+								}
+							}
+						}
+					}
+					transfer_state = 611
+				}
+				if = {
+					limit = {
+						524 = {
+							AND = {
+								is_owned_by = JAP
+								OR = {
+									is_controlled_by = PRC
+									is_controlled_by = CHI
+									is_controlled_by = JAP
+								}
+							}
+						}
+					}
+					transfer_state = 524
+				}
+				if = {
+					limit = {
+						526 = {
+							AND = {
+								is_owned_by = JAP
+								OR = {
+									is_controlled_by = PRC
+									is_controlled_by = CHI
+									is_controlled_by = JAP
+								}
+							}
+						}
+					}
+					transfer_state = 526
+				}
+				if = {
+					limit = {
+						525 = {
+							AND = {
+								is_owned_by = JAP
+								OR = {
+									is_controlled_by = PRC
+									is_controlled_by = CHI
+									is_controlled_by = JAP
+								}
+							}
+						}
+					}
+					transfer_state = 525
+				}
+				if = {
+					limit = {
+						527 = {
+							AND = {
+								is_owned_by = JAP
+								OR = {
+									is_controlled_by = PRC
+									is_controlled_by = CHI
+									is_controlled_by = JAP
+								}
+							}
+						}
+					}
+					transfer_state = 527
+				}
+			}
+		}	
+	}
+	option = {
+		name = china.1013.b
+		ai_chance = { factor = 75 }
+		hidden_effect = { # Puppet Korea
+			news_event = { days = 5 id = news.1010 }
+			CHI = {
+				 white_peace=JAP
+			}
+			PRC = {
+				 white_peace=JAP
+			}
+			if = {
+				limit = { country_exists = MEN }
+				annex_country = { target = MEN }
+			}
+			every_country = {
+				limit = {
+                    is_in_faction_with = JAP
+                    NOT = { tag = JAP }
+                }
+				white_peace = PRC
+				white_peace = CHI
+            }
+			CHI = {
+				add_state_core = 526
+				add_state_core = 537
+			}
+			PRC = {
+				add_state_core = 526
+				add_state_core = 537
+			}
+			KOR = {
+				transfer_state = 525
+				transfer_state = 527
+			}
+			puppet = KOR
+			KOR = {
+				add_opinion_modifier = { target = CHI modifier = libertor }
+				if = {
+					limit =  {
+						CHI = {
+							has_government = democratic
+						}
+					}
+					set_politics = {
+						ruling_party = democratic
+						elections_allowed = yes
+					}
+				}
+				if = {
+					limit =  {
+						CHI = {
+							has_government = communism
+						}
+					}
+					set_politics = {
+						ruling_party = communism
+						elections_allowed = no
+					}
+				}
+				if = {
+					limit =  {
+						CHI = {
+							has_government = fascism
+						}
+					}
+					set_politics = {
+						ruling_party = fascism
+						elections_allowed = no
+					}
+				}
+				if = {
+					limit =  {
+						CHI = {
+							has_government = neutrality
+						}
+					}
+					set_politics = {
+						ruling_party = neutrality
+						elections_allowed = no
+					}
+				}
+			}
+			CHI= {
+				if = {
+					limit = {
+						609 = {
+							AND = {
+								is_owned_by = JAP
+								OR = {
+									is_controlled_by = PRC
+									is_controlled_by = CHI
+									is_controlled_by = JAP
+								}
+							}
+						}
+					}
+					transfer_state = 609
+				}
+				if = {
+					limit = {
+						610 = {
+							AND = {
+								is_owned_by = JAP
+								OR = {
+									is_controlled_by = PRC
+									is_controlled_by = CHI
+									is_controlled_by = JAP
+								}
+							}
+						}
+					}
+					transfer_state = 610
+				}
+				if = {
+					limit = {
+						716 = {
+							AND = {
+								is_owned_by = JAP
+								OR = {
+									is_controlled_by = PRC
+									is_controlled_by = CHI
+									is_controlled_by = JAP
+								}
+							}
+						}
+					}
+					transfer_state = 716
+				}
+				if = {
+					limit = {
+						328 = {
+							AND = {
+								is_owned_by = JAP
+								OR = {
+									is_controlled_by = PRC
+									is_controlled_by = CHI
+									is_controlled_by = JAP
+								}
+							}
+						}
+					}
+					transfer_state = 328
+				}
+				if = {
+					limit = {
+						715 = {
+							AND = {
+								is_owned_by = JAP
+								OR = {
+									is_controlled_by = PRC
+									is_controlled_by = CHI
+									is_controlled_by = JAP
+								}
+							}
+						}
+					}
+					transfer_state = 715
+				}
+				if = {
+					limit = {
+						714 = {
+							AND = {
+								is_owned_by = JAP
+								OR = {
+									is_controlled_by = PRC
+									is_controlled_by = CHI
+									is_controlled_by = JAP
+								}
+							}
+						}
+					}
+					transfer_state = 714
+				}
+				if = {
+					limit = {
+						717 = {
+							AND = {
+								is_owned_by = JAP
+								OR = {
+									is_controlled_by = PRC
+									is_controlled_by = CHI
+									is_controlled_by = JAP
+								}
+							}
+						}
+					}
+					transfer_state = 717
+				}
+				if = {
+					limit = {
+						612 = {
+							AND = {
+								is_owned_by = MEN
+								OR = {
+									is_controlled_by = PRC
+									is_controlled_by = CHI
+									is_controlled_by = MEN
+								}
+							}
+						}
+					}
+					transfer_state = 612
+				}
+				if = {
+					limit = {
+						611 = {
+							AND = {
+								is_owned_by = MEN
+								OR = {
+									is_controlled_by = PRC
+									is_controlled_by = CHI
+									is_controlled_by = MEN
+								}
+							}
+						}
+					}
+					transfer_state = 611
+				}
+				if = {
+					limit = {
+						524 = {
+							AND = {
+								is_owned_by = JAP
+								OR = {
+									is_controlled_by = PRC
+									is_controlled_by = CHI
+									is_controlled_by = JAP
+								}
+							}
+						}
+					}
+					transfer_state = 524
+				}
+				if = {
+					limit = {
+						526 = {
+							AND = {
+								is_owned_by = JAP
+								OR = {
+									is_controlled_by = PRC
+									is_controlled_by = CHI
+									is_controlled_by = JAP
+								}
+							}
+						}
+					}
+					transfer_state = 526
+				}
+			}
+		}
+	}
+	option = {
+		name = china.1013.c
+		ai_chance = { factor = 0 }
+	}
+}
+
+# China Join Axis
+country_event = {
+	id = china.1014
+	title = china.1014.t
+	desc = china.1014.d
+	picture = GFX_report_event_finest_hour_axis
+	
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 30
+	}
+	
+	trigger = {
+		tag = CHI
+		has_global_flag = fading_sun
+		has_global_flag = chi_demand_indochina
+		GER = {
+			is_faction_leader = yes
+		}
+		OR = {
+			CHI = {
+				is_in_faction_with = GER
+			}
+			CHI = {
+				is_in_faction = no
+			}
+		}
+	}
+	option = {
+		name = china.1014.a
+		hidden_effect = {
+			GER = {
+				add_to_faction = CHI
+			}
+		}
+	}
+}
+
+# Karakhan Manifesto
+country_event = {
+	id = china.1015
+	title = china.1015.t
+	desc = china.1015.d
+	picture = GFX_report_event_stalin_speech
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = china.1015.a
+		hidden_effect = {
+			set_global_flag = chi_demand_northwest
+			news_event = { days = 5 id = news.1011 }
+			if = {
+				limit = { country_exists = SIK }
+				annex_country = { target = SIK }
+			}
+			CHI = {
+				add_state_core = 560
+				add_state_core = 561
+				add_state_core = 657
+				add_state_core = 409
+				add_state_core = 408
+				add_state_core = 655
+				add_state_core = 732
+				add_state_core = 586
+				add_state_core = 588
+				add_state_core = 589
+				add_state_core = 654
+				add_state_core = 40
+			}
+			CHI= {
+				if = {
+					limit = {
+						732 = {
+							AND = {
+								is_owned_by = SOV
+								OR = {
+									is_controlled_by = CHI
+									is_controlled_by = SOV
+								}
+							}
+						}
+					}
+					transfer_state = 732
+				}
+				if = {
+					limit = {
+						586 = {
+							AND = {
+								is_owned_by = SOV
+								OR = {
+									is_controlled_by = CHI
+									is_controlled_by = SOV
+								}
+							}
+						}
+					}
+					transfer_state = 586
+				}
+				if = {
+					limit = {
+						588 = {
+							AND = {
+								is_owned_by = SOV
+								OR = {
+									is_controlled_by = CHI
+									is_controlled_by = SOV
+								}
+							}
+						}
+					}
+					transfer_state = 588
+				}
+				if = {
+					limit = {
+						589 = {
+							AND = {
+								is_owned_by = SOV
+								OR = {
+									is_controlled_by = CHI
+									is_controlled_by = SOV
+								}
+							}
+						}
+					}
+					transfer_state = 589
+				}
+				if = {
+					limit = {
+						654 = {
+							AND = {
+								is_owned_by = SOV
+								OR = {
+									is_controlled_by = CHI
+									is_controlled_by = SOV
+								}
+							}
+						}
+					}
+					transfer_state = 654
+				}
+				if = {
+					limit = {
+						40 = {
+							AND = {
+								is_owned_by = SOV
+								OR = {
+									is_controlled_by = CHI
+									is_controlled_by = SOV
+								}
+							}
+						}
+					}
+					transfer_state = 40
+				}
+				if = {
+					limit = {
+						287 = {
+							AND = {
+								is_owned_by = SIK
+								OR = {
+									is_controlled_by = CHI
+									is_controlled_by = SOV
+									is_controlled_by = SIK
+								}
+							}
+						}
+					}
+					transfer_state = 287
+				}
+				if = {
+					limit = {
+						617 = {
+							AND = {
+								is_owned_by = SIK
+								OR = {
+									is_controlled_by = CHI
+									is_controlled_by = SOV
+									is_controlled_by = SIK
+								}
+							}
+						}
+					}
+					transfer_state = 617
+				}
+				if = {
+					limit = {
+						618 = {
+							AND = {
+								is_owned_by = SIK
+								OR = {
+									is_controlled_by = CHI
+									is_controlled_by = SOV
+									is_controlled_by = SIK
+								}
+							}
+						}
+					}
+					transfer_state = 618
+				}
+				if = {
+					limit = {
+						619 = {
+							AND = {
+								is_owned_by = SIK
+								OR = {
+									is_controlled_by = CHI
+									is_controlled_by = SOV
+									is_controlled_by = SIK
+								}
+							}
+						}
+					}
+					transfer_state = 619
+				}
+			}
+		}	
+	}
+}
+
+# SOV Reject Demand
+country_event = {
+	id = china.1016
+	title = china.1016.t
+	desc = china.1016.d
+	picture = GFX_report_event_stalin_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = china.1016.a
+		hidden_effect = { set_global_flag = chi_demand_northwest }
+	}
+}
+
+# China Join Comintern
+country_event = {
+	id = china.1017
+	title = china.1017.t
+	desc = china.1017.d
+	picture = GFX_report_event_finest_hour_com
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		days = 60
+	}
+	trigger = {
+		tag = CHI
+		has_global_flag = fading_sun
+		has_global_flag = chi_demand_northwest
+		SOV = {
+			is_faction_leader = yes
+		}
+		OR = {
+			CHI = {
+				is_in_faction_with = SOV
+			}
+			CHI = {
+				is_in_faction = no
+			}
+		}
+	}
+	option = {
+		name = china.1017.a
+		hidden_effect = {
+			SOV = {
+				add_to_faction = CHI
+			}
+		}
+	}
+}
+
+# French Accept Demand
+country_event = {
+	id = china.1018
+	title = china.1018.t
+	desc = china.1018.d
+	picture = GFX_report_event_chinese_tank1
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = china.1018.a
+		hidden_effect = {
+			news_event = { days = 5 id = news.1012 }
+			set_global_flag = cindochina_livraison
+		}
+		CHI = {
+			add_state_core = 286
+			add_state_core = 670
+			add_state_core = 671
+			if = {
+				limit = {
+					728 = {
+						is_owned_by = FRA
+						OR = {
+							is_controlled_by = FRA
+							is_controlled_by = CHI
+						}
+					}
+				}
+				transfer_state = 728
+			}
+			if = {
+				limit = {
+					286 = {
+						is_owned_by = FRA
+						OR = {
+							is_controlled_by = FRA
+							is_controlled_by = CHI
+						}
+					}
+				}
+				transfer_state = 286
+			}
+			if = {
+				limit = {
+					670 = {
+						is_owned_by = FRA
+						OR = {
+							is_controlled_by = FRA
+							is_controlled_by = CHI
+						}
+					}
+				}
+				transfer_state = 670
+			}
+			if = {
+				limit = {
+					671 = {
+						is_owned_by = FRA
+						OR = {
+							is_controlled_by = FRA
+							is_controlled_by = CHI
+						}
+					}
+				}
+				transfer_state = 671
+			}
+		}
+	}
+}
+
+# French Reject Demand
+country_event = {
+	id = china.1019
+	title = china.1019.t
+	desc = china.1019.d
+	picture = GFX_report_event_french_soldiers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = china.1019.a
+		hidden_effect = { set_global_flag = indochina_livraison }
 	}
 }
 
@@ -1408,7 +2563,7 @@ country_event = {
 		has_global_flag = PRC_restart_CHI_war
 	}
 
-	mean_time_to_happen = { days = 360 }
+	mean_time_to_happen = { days = 120 }
 
 	option = {
 		name = china.109.a
@@ -1431,6 +2586,9 @@ country_event = {
 	immediate = {
 		hidden_effect = {
 			PRC = { declare_war_on = { target = CHI type = annex_everything } }
+			CHI = {
+				remove_ideas = CHI_communist_uprisings
+			}
 		}
 	}
 
@@ -1480,7 +2638,8 @@ country_event = {
 						region = 155
 					}
 					NOT = { state = 525 }
-					NOT = { state = 527 }				
+					NOT = { state = 527 }
+					NOT = { state = 597 }					
 				}
 				ROOT = { transfer_state = PREV }
 			}			

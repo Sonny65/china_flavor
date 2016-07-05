@@ -138,19 +138,19 @@ create_country_leader = {
 }
 
 create_country_leader = {
-	name = "Qinglin Song"
-	desc = "POLITICS_MAO_ZEDONG_DESC"
-	picture = "Portrait_China_Qinglin_Song.dds"
+	name = "Chiang Ching-kuo"
+	desc = ""
+	picture = "Portrait_China_Chiang_Chingkuo.dds"
 	expire = "1965.1.1"
 	ideology = leninism
 	traits = {
-		mother_of_republic
+		new_generation
 	}
 }
 
 create_country_leader = {
 	name = "Guofu Chen"
-	desc = "POLITICS_WANG_JINGWEI_DESC"
+	desc = ""
 	picture = "Portrait_China_Guofu_Chen.dds"
 	expire = "1965.1.1"
 	ideology = fascism_ideology
@@ -161,7 +161,7 @@ create_country_leader = {
 
 create_country_leader = {
 	name = "Sen Lin"
-	desc = "POLITICS_ZHANG_LAN_DESC"
+	desc = ""
 	picture = "Portrait_China_Sen_Lin.dds"
 	expire = "1965.1.1"
 	ideology = liberalism

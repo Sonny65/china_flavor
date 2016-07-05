@@ -115,7 +115,16 @@ country_event = {
 	
 	option = {
 		name = germany.5.b		#refuse
-		ai_chance = { factor = 25 }
+		ai_chance = { 
+			factor = 25 
+			modifier = {
+				factor = 100
+				AND = {
+					TAG = JAP
+					has_global_flag = ger_support_chi
+				}
+			}
+		}
 		GER =  { add_opinion_modifier = { target = ROOT modifier = refused_anti_comintern_pact_opinion } }
 	}
 

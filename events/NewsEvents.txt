@@ -131,6 +131,253 @@ news_event = {
 		trigger = { TAG = CHI }
 	}
 }
+# Change Government
+news_event = {
+	id = news.1005
+	title = news.1005.t
+	desc = news.1005.d
+	picture = GFX_news_event_1005
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.1005.a
+		trigger = {
+			NOT = {
+				OR = {
+					TAG = CHI
+					TAG = GER
+				}
+			}
+		}
+	}
+	option = {
+		name = news.1005.b
+		trigger = { TAG = CHI }
+	}
+	option = {
+		name = news.1005.c
+		trigger = { TAG = GER }
+	}
+}
+
+news_event = {
+	id = news.1006
+	title = news.1006.t
+	desc = news.1006.d
+	picture = GFX_news_event_1006
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.1006.a
+		trigger = {
+			NOT = {
+				OR = {
+					TAG = CHI
+					TAG = SOV
+				}
+			}
+		}
+	}
+	option = {
+		name = news.1006.b
+		trigger = { TAG = CHI }
+	}
+	option = {
+		name = news.1006.c
+		trigger = { TAG = SOV }
+	}
+}
+
+news_event = {
+	id = news.1007
+	title = news.1007.t
+	desc = news.1007.d
+	picture = GFX_news_event_1007
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.1007.a
+		trigger = {
+			NOT = {
+				OR = {
+					TAG = CHI
+					TAG = ENG
+				}
+			}
+		}
+	}
+	option = {
+		name = news.1007.b
+		trigger = { TAG = CHI }
+	}
+	option = {
+		name = news.1007.c
+		trigger = { TAG = ENG }
+	}
+}
+
+
+# Military Academy
+news_event = {
+	id = news.1008
+	title = news.1008.t
+	desc = news.1008.d
+	picture = GFX_news_event_1008
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.1008.a
+		trigger = {
+			NOT = {
+				TAG = CHI
+			}
+		}
+	}
+	option = {
+		name = news.1008.b
+		trigger = { TAG = CHI }
+	}
+}
+
+# Indochina
+news_event = {
+	id = news.1009
+	title = news.1009.t
+	desc = news.1009.d
+	picture = GFX_news_event_1009
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.1009.a
+		trigger = {
+			NOT = {
+				OR = {
+					TAG = CHI
+					TAG = FRA
+				}
+			}
+		}
+	}
+	option = {
+		name = news.1009.b
+		trigger = { TAG = CHI }
+	}
+	option = {
+		name = news.1009.c
+		trigger = { TAG = FRA }
+	}
+}
+
+# CHI-JAP peace
+news_event = {
+	id = news.1010
+	title = news.1010.t
+	desc = news.1010.d
+	picture = GFX_news_event_1010
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.1010.a
+		trigger = {
+			NOT = {
+				OR = {
+					TAG = CHI
+					TAG = JAP
+				}
+			}
+		}
+	}
+	option = {
+		name = news.1010.b
+		trigger = { TAG = CHI }
+	}
+	option = {
+		name = news.1010.c
+		trigger = { TAG = JAP }
+	}
+}
+
+# Karakhan Manifesto Northwest
+news_event = {
+	id = news.1011
+	title = news.1011.t
+	desc = news.1011.d
+	picture = GFX_news_event_1011
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.1011.a
+		trigger = {
+			NOT = {
+				OR = {
+					TAG = CHI
+					TAG = SOV
+				}
+			}
+		}
+	}
+	option = {
+		name = news.1011.b
+		trigger = { TAG = CHI }
+	}
+	option = {
+		name = news.1011.c
+		trigger = { TAG = SOV }
+	}
+}
+
+# Indochina Livraison
+news_event = {
+	id = news.1012
+	title = news.1012.t
+	desc = news.1012.d
+	picture = GFX_news_event_1012
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.1011.a
+		trigger = {
+			NOT = {
+				OR = {
+					TAG = CHI
+					TAG = FRA
+				}
+			}
+		}
+	}
+	option = {
+		name = news.1011.b
+		trigger = { TAG = CHI }
+	}
+	option = {
+		name = news.1011.c
+		trigger = { TAG = FRA }
+	}
+}
 
 # Marco Polo Bridge I
 news_event = {

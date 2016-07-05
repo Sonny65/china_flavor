@@ -47,9 +47,12 @@ focus_tree = {
 		id = continue_sino_german_cooperation                                
 		icon = GFX_goal_generic_axis_build_infantry
 		prerequisite = { focus = employ_western_officers }
-		mutually_exclusive = { focus = ussr_support focus = democratic_armory }
+		mutually_exclusive = { focus = independent_development focus = restablish_united_front focus = arms_trade}
 		available =
 		{
+			num_of_factories > 40
+			country_exists = GER
+			NOT = { has_war_with = GER }
 			has_idea = german_advisors
 		}
 		cancel = {
@@ -75,7 +78,7 @@ focus_tree = {
 			add_tech_bonus = {
 				name = infantry_equipment
 				bonus = 0.5
-				uses = 2
+				uses = 1
 				category = infantry_tech
 				category = infantry_weapons 
 			}
@@ -86,11 +89,12 @@ focus_tree = {
 		id = ussr_support                                
 		icon = GFX_goal_generic_build_tank
 		prerequisite = { focus = employ_western_officers }
+		mutually_exclusive = { focus = independent_development focus = extend_terms focus = arms_trade}
 		available = {
+			num_of_factories > 30
 			country_exists = SOV
 			NOT = { has_war_with = SOV }
 		}
-		mutually_exclusive = { focus = continue_sino_german_cooperation focus = democratic_armory }
 		x = 3
 		y = 2
 		cost = 10
@@ -109,7 +113,7 @@ focus_tree = {
 			add_tech_bonus = {
 				name = infantry_equipment
 				bonus = 0.5
-				uses = 2
+				uses = 1
 				category = infantry_tech
 				category = infantry_weapons 
 				category = artillery
@@ -121,11 +125,12 @@ focus_tree = {
 		id = democratic_armory                                
 		icon = GFX_goal_generic_allies_build_infantry
 		prerequisite = { focus = employ_western_officers }
+		mutually_exclusive = { focus = independent_development focus = extend_terms focus = restablish_united_front}
 		available = {
+			num_of_factories > 35
 			country_exists = ENG
 			NOT = { has_war_with = ENG }
 		}
-		mutually_exclusive = { focus = continue_sino_german_cooperation focus = ussr_support}
 		x = 5
 		y = 2
 		cost = 10
@@ -135,7 +140,7 @@ focus_tree = {
 			add_tech_bonus = {
 				name = sub_op_bonus
 				bonus = 0.5
-				uses = 2
+				uses = 1
 				category = light_fighter
 				category = tactical_bomber
 			}
@@ -153,8 +158,8 @@ focus_tree = {
 	focus = {
 		id = extend_terms                                
 		icon = GFX_goal_generic_dangerous_deal
-		prerequisite = { focus = continue_sino_german_cooperation }
-		mutually_exclusive = { focus = independent_development }
+		prerequisite = { focus = continue_sino_german_cooperation focus = ussr_support focus = democratic_armory}
+		mutually_exclusive = { focus = independent_development focus = restablish_united_front focus = arms_trade}
 		available = {
 			country_exists = GER
 			NOT = { has_war_with = GER }
@@ -167,17 +172,15 @@ focus_tree = {
 		y = 3
 		cost = 10
 		completion_reward = {
-			CHI = {
-				country_event = { days = 1 id = china.1000 }
-			}
+			country_event = { days = 1 id = china.1000 }
 		}
 	}
 	
 	focus = {
 		id = restablish_united_front                                
 		icon = GFX_goal_generic_national_unity
-		prerequisite = { focus = ussr_support }
-		mutually_exclusive = { focus = independent_development }
+		prerequisite = { focus = continue_sino_german_cooperation focus = ussr_support focus = democratic_armory}
+		mutually_exclusive = { focus = independent_development focus = extend_terms focus = arms_trade }
 		available = {
 			country_exists = PRC
 			country_exists = SOV
@@ -207,9 +210,13 @@ focus_tree = {
 				category = artillery
 			}
 			remove_ideas = CHI_communist_uprisings
+			SOV = {
+				add_opinion_modifier = { target = CHI modifier = chi_promise_focus }
+			}
 			hidden_effect = {
 				CHI = { country_event = { days = 20 id = china.1005 } }
 				set_global_flag = CHI_USSR_focus
+				add_opinion_modifier = { target = SOV modifier = foreign_support }
 			}
 		}
 	}
@@ -217,8 +224,8 @@ focus_tree = {
 	focus = {
 		id = arms_trade                                
 		icon = GFX_goal_generic_military_sphere
-		prerequisite = { focus = democratic_armory }
-		mutually_exclusive = { focus = independent_development }
+		prerequisite = { focus = continue_sino_german_cooperation focus = ussr_support focus = democratic_armory}
+		mutually_exclusive = { focus = independent_development focus = extend_terms focus = restablish_united_front }
 		available = {
 			country_exists = ENG
 			NOT = { has_war_with = ENG }
@@ -266,6 +273,7 @@ focus_tree = {
 			}
 			hidden_effect = {
 				news_event = { hours = 6 id = news.1000}
+				CHI = { country_event = { days = 20 id = china.1005 } }
 			}
 		}
 	}
@@ -281,7 +289,7 @@ focus_tree = {
 		}
 		x = 1
 		y = 4
-		cost = 50
+		cost = 40
 		completion_reward = {
 			CHI = {
 				country_event = { days = 5 id = china.1006 }
@@ -304,7 +312,7 @@ focus_tree = {
 		}
 		x = 3
 		y = 4
-		cost = 50
+		cost = 40
 		completion_reward = {
 			CHI = {
 				country_event = { days = 5 id = china.1007 }
@@ -327,7 +335,7 @@ focus_tree = {
 		}
 		x = 5
 		y = 4
-		cost = 50
+		cost = 40
 		completion_reward = {
 			CHI = {
 				country_event = { days = 5 id = china.1008 }
@@ -349,7 +357,7 @@ focus_tree = {
 		}
 		x = 7
 		y = 4
-		cost = 60
+		cost = 45
 		completion_reward = {
 			CHI = {
 				country_event = { days = 5 id = china.1009 }
@@ -358,18 +366,6 @@ focus_tree = {
 				ideology = neutrality
 				popularity = 0.10
 			}
-		}
-	}
-	
-	focus = {
-		id = research_capacity                          
-		icon = GFX_focus_research
-		prerequisite = { focus = extend_terms focus = restablish_united_front focus = arms_trade focus = independent_development }
-		x = 9
-		y = 4
-		cost = 10
-		completion_reward = {
-			add_research_slot = 1
 		}
 	}
 	
@@ -400,7 +396,7 @@ focus_tree = {
 				category = cas_bomber
 			}
 			hidden_effect = {
-				news_event = { hours = 12 id = news.1001}
+				news_event = { days = 3 id = news.1001}
 			}
 		}
 	}
@@ -433,7 +429,7 @@ focus_tree = {
 				technology = mechanised_infantry
 			}
 			hidden_effect = {
-				news_event = { hours = 12 id = news.1002}
+				news_event = { days = 3 id = news.1002}
 			}
 		}
 	}
@@ -475,7 +471,7 @@ focus_tree = {
 				category = cv_tech
 			}
 			hidden_effect = {
-				news_event = { hours = 12 id = news.1003}
+				news_event = { days = 3 id = news.1003}
 			}
 		}
 	}
@@ -506,9 +502,340 @@ focus_tree = {
 				category = artillery
 			}
 			hidden_effect = {
-				news_event = { hours = 12 id = news.1004}
+				news_event = { days = 3 id = news.1004}
 			}
 		}
 	}
 	
+	focus = {
+		id = research_capacity                          
+		icon = GFX_focus_research
+		prerequisite = { focus = tsingtao_cooperation_company focus = nanchang_mineral_company focus = xiamen_trade_company focus = chengdu_industry_bureau }
+		x = 9
+		y = 5
+		cost = 10
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	focus = {
+		id = blue_shirt_coup                             
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = sino_luftwaffe }
+		available = {
+			is_puppet = no
+			country_exists = GER
+			NOT = { has_war_with = GER }
+			GER = { has_government = fascism }
+		}
+		bypass = {
+			has_government = fascism
+		}
+		x = 1
+		y = 6
+		cost = 10
+		completion_reward = {
+			add_political_power = -150
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			}
+			set_rule = { can_send_volunteers = yes }
+			add_opinion_modifier = { target = GER modifier = axis_leanings_focus }
+			GER = {
+				add_opinion_modifier = { target = CHI modifier = axis_leanings_focus }
+			}
+			hidden_effect = {
+				news_event = { hours = 12 id = news.1005}
+			}
+		}
+	}
+	
+	focus = {
+		id = revolutionize_kuomingtang                               
+		icon = GFX_goal_support_communism
+		prerequisite = { focus = steel_of_the_repulic }
+		available = {
+			is_puppet = no
+			country_exists = SOV
+			NOT = { has_war_with = SOV }
+			SOV = { has_government = communism }
+		}
+		bypass = {
+			has_government = communism
+		}
+		x = 3
+		y = 6
+		cost = 10
+		completion_reward = {
+			add_political_power = -150
+			set_politics = {
+				ruling_party = communism
+				elections_allowed = no
+			}
+			set_rule = { can_send_volunteers = yes }
+			add_opinion_modifier = { target = SOV modifier = comintern_leanings_focus }
+			SOV = {
+				add_opinion_modifier = { target = CHI modifier = comintern_leanings_focus }
+			}
+			hidden_effect = {
+				news_event = { hours = 12 id = news.1006}
+				annex_country = { target = PRC transfer_troops = yes }
+			}
+		}
+	}
+	
+	focus = {
+		id = democratic_election                               
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = revisit_our_sea }
+		available = {
+			is_puppet = no
+			country_exists = ENG
+			NOT = { has_war_with = ENG }
+			ENG = { has_government = democratic }
+		}
+		bypass = {
+			has_government = democratic
+		}
+		x = 5
+		y = 6
+		cost = 10
+		completion_reward = {
+			add_political_power = -150
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+			}
+			set_rule = { can_send_volunteers = yes }
+			add_opinion_modifier = { target = ENG modifier = ally_leanings_focus }
+			ENG = {
+				add_opinion_modifier = { target = ENG modifier = ally_leanings_focus }
+			}
+			hidden_effect = {
+				news_event = { hours = 12 id = news.1007}
+			}
+		}
+	}
+	
+	focus = {
+		id = reform_military_academy                               
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = whampoa_rifle }
+		available = {
+			is_puppet = no
+		}
+		x = 7
+		y = 6
+		cost = 10
+		completion_reward = {
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+			add_tech_bonus = {
+				name = infantry_equipment
+				bonus = 0.5
+				uses = 2
+				category = infantry_tech
+				category = infantry_weapons 
+				category = artillery
+			}
+			set_rule = { can_send_volunteers = yes }
+			add_ideas = whampoa_spirit
+			hidden_effect = {
+				news_event = { days = 3 id = news.1008}
+			}
+		}
+	}
+	
+	focus = {
+		id = demand_indochina_passage                            
+		icon = GFX_goal_generic_more_territorial_claims
+		prerequisite = { focus = blue_shirt_coup }
+		available = {
+			is_puppet = no
+			num_of_factories > 100
+			has_global_flag = fading_sun
+			NOT = { has_war_with = GER }
+			NOT = { has_war_with = FRA }
+			FRA = {
+				has_war_with = GER
+			}
+			NOT = { is_in_faction_with = PRC }
+		}
+		bypass = {
+			OR = {
+				AND = {
+					286 = {
+						is_controlled_by = CHI
+					}
+					670 = {
+						is_controlled_by = CHI
+					}
+					671 = {
+						is_controlled_by = CHI
+					}
+				}
+				NOT = {
+					286 = {
+						is_controlled_by = FRA
+					}
+					670 = {
+						is_controlled_by = FRA
+					}
+					671 = {
+						is_controlled_by = FRA
+					}
+				}
+			}
+		}
+		x = 1
+		y = 7
+		cost = 10
+		completion_reward = {
+			FRA = { country_event = { days = 3 id = france.1000 } }
+		}
+	}
+	
+	focus = {
+		id = karakhan_manifesto_northwest                          
+		icon = GFX_goal_generic_forceful_treaty
+		prerequisite = { focus = revolutionize_kuomingtang }
+		available = {
+			is_puppet = no
+			num_of_factories > 100
+			has_global_flag = fading_sun
+			NOT = { has_war_with = SOV }
+			country_exists = SOV
+			SOV = {
+				has_government = communism
+			}
+			NOT = { is_in_faction_with = PRC }
+		}
+		bypass = {
+			OR = {
+				AND = {
+					586 = {
+						is_controlled_by = CHI
+					}
+					588 = {
+						is_controlled_by = CHI
+					}
+					589 = {
+						is_controlled_by = CHI
+					}
+					654 = {
+						is_controlled_by = CHI
+					}
+					40 = {
+						is_controlled_by = CHI
+					}
+				}
+				NOT = {
+					586 = {
+						is_controlled_by = SOV
+					}
+					588 = {
+						is_controlled_by = SOV
+					}
+					589 = {
+						is_controlled_by = SOV
+					}
+					654 = {
+						is_controlled_by = SOV
+					}
+					40 = {
+						is_controlled_by = SOV
+					}
+					287 = {
+						is_controlled_by = SIK
+					}
+					617 = {
+						is_controlled_by = SIK
+					}
+					618 = {
+						is_controlled_by = SIK
+					}
+					619 = {
+						is_controlled_by = SIK
+					}
+				}
+			}
+		}
+		x = 3
+		y = 7
+		cost = 10
+		completion_reward = {
+			SOV = { country_event = { days = 3 id = soviet.1000 } }
+		}
+	}
+	
+	focus = {
+		id = indochina_livraison          
+		icon = GFX_goal_generic_intelligence_exchange
+		prerequisite = { focus = democratic_election }
+		available = {
+			is_puppet = no
+			num_of_factories > 100
+			has_global_flag = fading_sun
+			NOT = { has_war_with = FRA }
+			country_exists = FRA
+			ENG = {
+				has_government = democratic
+			}
+			NOT = { is_in_faction_with = PRC }
+		}
+		bypass = {
+			OR = {
+				AND = {
+					286 = {
+						is_controlled_by = CHI
+					}
+					670 = {
+						is_controlled_by = CHI
+					}
+					671 = {
+						is_controlled_by = CHI
+					}
+				}
+				NOT = {
+					286 = {
+						is_controlled_by = FRA
+					}
+					670 = {
+						is_controlled_by = FRA
+					}
+					671 = {
+						is_controlled_by = FRA
+					}
+				}
+			}
+			}
+		x = 5
+		y = 7
+		cost = 10
+		completion_reward = {
+			FRA = { country_event = { days = 3 id = france.1001 } }
+		}
+	}
+	
+	focus = {
+		id = zhongshan_design_bureau                               
+		icon = GFX_goal_generic_scientific_exchange
+		prerequisite = { focus = reform_military_academy }
+		available = {
+			is_puppet = no
+			
+		}
+		x = 7
+		y = 7
+		cost = 10
+		completion_reward = {
+			add_ideas = zhongshan_design_bureau
+		}
+	}
 }

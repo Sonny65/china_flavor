@@ -42,8 +42,58 @@ spriteTypes = {
 	}
 	
 	spriteType = {
+		name = "GFX_report_event_chinese_soldiers_marching"
+		texturefile = "gfx/event_pictures/report_event_chinese_soldiers_marching.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_german_equipped_chinese_soliders"
+		texturefile = "gfx/event_pictures/report_event_german_equipped_chinese_soliders.dds"
+	}
+	
+	spriteType = {
 		name = "GFX_report_event_jiang_speech"
 		texturefile = "gfx/event_pictures/report_event_jiang_speech.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_japanese_pow"
+		texturefile = "gfx/event_pictures/report_event_japanese_pow.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_japanese_pow2"
+		texturefile = "gfx/event_pictures/report_event_japanese_pow2.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_finest_hour_axis"
+		texturefile = "gfx/event_pictures/report_event_finest_hour_axis.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_finest_hour_com"
+		texturefile = "gfx/event_pictures/report_event_finest_hour_com.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_stalin_speech"
+		texturefile = "gfx/event_pictures/report_event_stalin_speech.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_lenin_speech"
+		texturefile = "gfx/event_pictures/report_event_lenin_speech.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_chinese_tank1"
+		texturefile = "gfx/event_pictures/report_event_chinese_tank1.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_french_soldiers"
+		texturefile = "gfx/event_pictures/report_event_french_soldiers.dds"
 	}
 	
 	spriteType = {
@@ -69,6 +119,46 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_news_event_1004"
 		texturefile = "gfx/event_pictures/news_event_1004.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_news_event_1005"
+		texturefile = "gfx/event_pictures/news_event_1005.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_news_event_1006"
+		texturefile = "gfx/event_pictures/news_event_1006.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_news_event_1007"
+		texturefile = "gfx/event_pictures/news_event_1007.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_news_event_1008"
+		texturefile = "gfx/event_pictures/news_event_1008.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_news_event_1009"
+		texturefile = "gfx/event_pictures/news_event_1009.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_news_event_1010"
+		texturefile = "gfx/event_pictures/news_event_1010.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_news_event_1011"
+		texturefile = "gfx/event_pictures/news_event_1011.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_news_event_1012"
+		texturefile = "gfx/event_pictures/news_event_1012.dds"
 	}
 	
 	spriteType = {

@@ -30,6 +30,22 @@ opinion_modifiers = {
 		value = -10
 	}
 	
+	comintern_leanings_focus = {
+		value = 50
+	}
+	
+	ally_leanings_focus = {
+		value = 50
+	}
+	
+	libertor = {
+		value = 80
+	}
+	
+	betrayed = {
+		value = -50
+	}
+	
 	hostile_status = { #special used for civil wars that are on hold and blocks faction stuff
 		value = -100
 	}

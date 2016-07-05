@@ -1,5 +1,45 @@
 ideas = {
 	country = {
+	
+		# China Mod
+		whampoa_spirit = {
+			picture = FRA_national_mobilization_focus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				NOT = {
+					has_government = communism
+				}
+			}
+
+			removal_cost = -1
+			
+			research_bonus = {
+				land_doctrine = 0.05
+			}
+			modifier = {
+				army_morale_factor = 0.05
+				unity_factor = 0.1
+			}
+		}
+		
+		zhongshan_design_bureau = {
+			picture = generic_research_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				research_time_factor = -0.1
+			}
+		}
+		
 		german_advisors = {
 		
 			allowed = {
