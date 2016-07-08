@@ -1405,7 +1405,7 @@ country_event = {
 		name = china.1018.a
 		hidden_effect = {
 			news_event = { days = 5 id = news.1012 }
-			set_global_flag = cindochina_livraison
+			set_global_flag = indochina_livraison
 		}
 		CHI = {
 			add_state_core = 286
@@ -1475,6 +1475,219 @@ country_event = {
 	option = {
 		name = china.1019.a
 		hidden_effect = { set_global_flag = indochina_livraison }
+	}
+}
+
+# China Join Ally
+country_event = {
+	id = china.1020
+	title = china.1020.t
+	desc = china.1020.d
+	picture = GFX_report_event_finest_hour_ally
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		days = 60
+	}
+	trigger = {
+		tag = CHI
+		has_global_flag = fading_sun
+		has_global_flag = indochina_livraison
+		ENG = {
+			is_faction_leader = yes
+		}
+		OR = {
+			CHI = {
+				is_in_faction_with = ENG
+			}
+			CHI = {
+				is_in_faction = no
+			}
+		}
+	}
+	option = {
+		name = china.1020.a
+		hidden_effect = {
+			ENG = {
+				add_to_faction = CHI
+			}
+		}
+	}
+}
+
+# Scientists returning
+country_event = {
+	id = china.1021
+	title = china.1021.t
+	desc = china.1021.d
+	picture = GFX_report_event_chinese_scientist
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = china.1021.a
+		add_tech_bonus = {
+			name = secret_bonus
+			bonus = 0.5
+			uses = 2
+			category = nuclear
+			category = rocketry
+			category = jet_technology
+		}
+	}
+}
+
+# Form Indian Liberation Army
+country_event = {
+	id = china.1022
+	title = china.1022.t
+	desc = china.1022.d
+	picture = GFX_report_event_idian_civilian
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = china.1022.a
+		RAJ = {
+			start_civil_war = {
+				ideology = fascism
+				size = 0.2
+				capital = 430
+				states = { 288 640 430 434 432 }
+			}
+			add_national_unity = -0.2
+		}
+		hidden_effect = {
+			news_event = { days = 5 id = news.1013 }
+			random_country = {
+				limit = {
+					original_tag = RAJ
+					has_government = fascism
+				}
+				set_equipment_fraction = 0.3
+				set_national_unity = 0.9
+				country_event = { id = china.2000 }
+			}
+		}
+	}
+}
+
+# Siam events
+country_event = {
+	id = china.1023
+	title = china.1023.t
+	desc = china.1023.d
+	picture = GFX_report_event_finest_hour_ally
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = china.1023.a
+		SIA = { 
+			country_event = { id = china.1024 }
+		}
+	}
+	
+	option = {
+		name = china.1023.b
+		declare_war_on = {
+			target = SIA
+			type = puppet_wargoal_focus
+		}
+	}
+}
+
+# Siam event from China: Become puppet or not
+country_event = {
+	id = china.1024
+	title = china.1024.t
+	desc = china.1024.d
+	picture = GFX_report_event_german_equipped_chinese_soliders
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = china.1024.a
+		ai_chance = {
+			factor = 90 
+			modifier = {
+				#If they have a fighting chance, they should stand their ground
+				factor = 0
+				strength_ratio = {
+					tag = CHI
+					ratio > 0.75
+				}
+			}
+		}
+		CHI = { 
+			country_event = { days = 5 id = china.1025 }
+			effect_tooltip = { puppet = SIA }
+		}
+	}
+
+	option = {
+		name = china.1024.b
+		ai_chance = { factor = 10 }
+		CHI = { 
+			country_event = { days = 5 id = china.1026 }
+			effect_tooltip = {
+				declare_war_on = {
+					target = SIA
+					type = puppet_wargoal_focus
+				}
+			}
+		}
+	}
+}
+
+# Siam accepts and is puppeted
+country_event = {
+	id = china.1025
+	title = china.1025.t
+	desc = china.1025.d
+	picture = GFX_report_event_chinese_soldiers_marching
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = china.1025.a
+		puppet = SIA
+	}
+}
+
+# Siam refuses, nations go to war 
+country_event = {
+	id = china.1026
+	title = china.1026.t
+	desc = china.1026.d
+	picture = GFX_report_event_german_equipped_chinese_soliders
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = china.1026.a
+		declare_war_on = {
+			target = SIA
+			type = puppet_wargoal_focus
+		}
+	}
+}
+
+# event to puppet free india, player won't see this
+country_event = {
+	id = china.2000
+	title = china.2000.t
+	desc = china.2000.d
+	picture = GFX_report_event_worker_protests
+
+	is_triggered_only = yes
+	
+	option = {
+		name = china.2000.a
+		CHI = {
+			puppet = ROOT
+		}
 	}
 }
 

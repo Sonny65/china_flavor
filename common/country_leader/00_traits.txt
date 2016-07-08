@@ -1,5 +1,47 @@
 leader_traits = {
 	
+	# China MOD
+	hesitant_steed = {
+		random = no
+		justify_war_goal_time = 0.20
+		army_defence_factor = 0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	new_generation = {
+		random = no
+		industrial_capacity_factory = 0.10
+		research_time_factor = -0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	
+	military_leader = {
+		random = no
+		army_attack_factor = 0.05
+		army_speed_factor = 0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	toothless_idealist = {
+		random = no
+		political_power_factor = -0.25
+		production_speed_buildings_factor = 0.15
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
 	dictator = {
 		random = no
 		political_power_factor = 0.5
@@ -173,48 +215,6 @@ leader_traits = {
 		political_power_factor = -0.15
 		justify_war_goal_time = 0.15
 		subversive_activites_upkeep = -0.3
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	hesitant_steed = {
-		random = no
-		political_power_factor = -0.05
-		justify_war_goal_time = 0.20
-		army_defence_factor = 0.10
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	new_generation = {
-		random = no
-		industrial_capacity_factory = 0.10
-		research_time_factor = -0.05
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	
-	party_head = {
-		random = no
-		political_power_factor = 0.25
-		fascism_drift = 0.1
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	toothless_idealist = {
-		random = no
-		political_power_factor = -0.15
-		unity_factor = 0.10
 		
 		ai_will_do = {
 			factor = 1

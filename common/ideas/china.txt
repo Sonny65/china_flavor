@@ -26,7 +26,7 @@ ideas = {
 			}
 		}
 		
-		zhongshan_design_bureau = {
+		yat-sen_design_bureau = {
 			picture = generic_research_bonus
 			
 			allowed = {
@@ -37,6 +37,135 @@ ideas = {
 			
 			modifier = {
 				research_time_factor = -0.1
+			}
+		}
+		
+		industry_rehabilitation = {
+			picture = generic_production_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_buildings_factor = 0.10
+			}
+		}
+		
+		bis = {
+			picture = triumphant_will
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				enemy_partisan_effect = -0.2
+			}
+		}
+		
+		kmtyl = {
+			picture = home_of_revolution
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_morale_factor = 0.1
+				land_reinforce_rate = 0.05
+			}
+		}
+		
+		asia_liberator = {
+			picture = generic_victors_of_ww1
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				subversive_activites_upkeep = -0.5
+				army_morale_factor = 0.2
+			}
+		}
+		
+		wanhu_flugmaschinenfabrik = {
+			picture = generic_air_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			equipment_bonus = {
+				fighter_equipment = {
+					build_cost_ic = -0.10 instant = yes
+				}
+				cv_fighter_equipment = {
+					build_cost_ic = -0.10 instant = yes
+				}
+				CAS_equipment = {
+					build_cost_ic = -0.10 instant = yes
+				}
+				jet_fighter_equipment = {
+					build_cost_ic = -0.10 instant = yes
+				}
+			}
+		}
+		
+		nominal_united = {
+			picture = generic_disjointed_gov
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				conscription = -0.02
+				local_resources_factor = -0.25
+				political_power_factor = -0.20
+			}
+		}
+		
+		low_literacy_rate = {
+			picture = great_depression
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				research_time_factor = 0.15
+				unity_factor = -0.15
+			}
+		}
+		
+		unbalanced_industry = {
+			picture = FRA_factory_strikes
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_arms_factory_factor = -0.2
+				industrial_capacity_factory = -0.10
 			}
 		}
 		
@@ -102,8 +231,8 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				political_power_cost = 0.25
-				unity_factor = -0.20
+				political_power_cost = 0.20
+				unity_factor = -0.15
 			}
 
 		}

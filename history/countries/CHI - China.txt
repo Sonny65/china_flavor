@@ -18,6 +18,9 @@ add_ideas = {
 	german_advisors
 	CHI_communist_uprisings
 	limited_conscription
+	nominal_united
+	low_literacy_rate
+	unbalanced_industry
 }
 
 set_convoys = 40
@@ -149,20 +152,20 @@ create_country_leader = {
 }
 
 create_country_leader = {
-	name = "Guofu Chen"
+	name = "Chiang Wei-kuo"
 	desc = ""
-	picture = "Portrait_China_Guofu_Chen.dds"
+	picture = "Portrait_China_Chiang_Wei-kuo.dds"
 	expire = "1965.1.1"
 	ideology = fascism_ideology
 	traits = {
-		party_head
+		military_leader
 	}
 }
 
 create_country_leader = {
-	name = "Sen Lin"
+	name = "Sun Fo"
 	desc = ""
-	picture = "Portrait_China_Sen_Lin.dds"
+	picture = "Portrait_China_Sun_Fo.dds"
 	expire = "1965.1.1"
 	ideology = liberalism
 	traits = {

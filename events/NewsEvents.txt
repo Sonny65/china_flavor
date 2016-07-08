@@ -359,7 +359,7 @@ news_event = {
 	is_triggered_only = yes
 	
 	option = {
-		name = news.1011.a
+		name = news.1012.a
 		trigger = {
 			NOT = {
 				OR = {
@@ -370,12 +370,187 @@ news_event = {
 		}
 	}
 	option = {
-		name = news.1011.b
+		name = news.1012.b
 		trigger = { TAG = CHI }
 	}
 	option = {
-		name = news.1011.c
+		name = news.1012.c
 		trigger = { TAG = FRA }
+	}
+}
+
+# Indian National Army
+news_event = {
+	id = news.1013
+	title = news.1013.t
+	desc = news.1013.d
+	picture = GFX_news_event_1013
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.1013.a
+		trigger = {
+			NOT = {
+				OR = {
+					TAG = CHI
+					TAG = ENG
+				}
+			}
+		}
+	}
+	option = {
+		name = news.1013.b
+		trigger = { TAG = CHI }
+	}
+	option = {
+		name = news.1013.c
+		trigger = { TAG = ENG }
+	}
+}
+
+# Singapore
+news_event = {
+	id = news.1014
+	title = news.1014.t
+	desc = news.1014.d
+	picture = GFX_news_event_1014
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.1014.a
+		trigger = {
+			NOT = {
+				OR = {
+					TAG = CHI
+					TAG = ENG
+				}
+			}
+		}
+	}
+	option = {
+		name = news.1014.b
+		trigger = { TAG = CHI }
+	}
+	option = {
+		name = news.1014.c
+		trigger = { TAG = ENG }
+	}
+}
+
+# Liberate Asia
+news_event = {
+	id = news.1015
+	title = news.1015.t
+	desc = news.1015.d
+	picture = GFX_news_event_1015
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.1015.a
+		trigger = {
+			NOT = {
+				OR = {
+					TAG = CHI
+				}
+			}
+		}
+	}
+	option = {
+		name = news.1015.b
+		trigger = { TAG = CHI }
+	}
+}
+
+# Asia Union
+news_event = {
+	id = news.1016
+	title = news.1016.t
+	desc = news.1016.d
+	picture = GFX_news_event_1015
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.1016.a
+		trigger = {
+			NOT = {
+				OR = {
+					TAG = CHI
+				}
+			}
+		}
+	}
+	option = {
+		name = news.1016.b
+		trigger = { TAG = CHI }
+	}
+}
+
+news_event = {
+	id = news.1017
+	title = news.1017.t
+	desc = news.1017.d
+	picture = GFX_news_event_1017
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.1017.a
+		trigger = {
+			NOT = {
+				OR = {
+					TAG = CHI
+					TAG = JAP
+				}
+			}
+		}
+	}
+	option = {
+		name = news.1017.b
+		trigger = { TAG = CHI }
+	}
+	option = {
+		name = news.1017.c
+		trigger = { TAG = JAP }
+	}
+}
+
+news_event = {
+	id = news.1017
+	title = news.1017.t
+	desc = news.1017.d
+	picture = GFX_news_event_1017
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.1017.a
+		trigger = {
+			NOT = {
+				OR = {
+					TAG = CHI
+				}
+			}
+		}
+	}
+	option = {
+		name = news.1017.b
+		trigger = { TAG = CHI }
 	}
 }
 
