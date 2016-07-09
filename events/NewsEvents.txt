@@ -529,17 +529,17 @@ news_event = {
 }
 
 news_event = {
-	id = news.1017
-	title = news.1017.t
-	desc = news.1017.d
-	picture = GFX_news_event_1017
+	id = news.1018
+	title = news.1018.t
+	desc = news.1018.d
+	picture = GFX_news_event_1018
 	
 	major = yes
 	
 	is_triggered_only = yes
 	
 	option = {
-		name = news.1017.a
+		name = news.1018.a
 		trigger = {
 			NOT = {
 				OR = {
@@ -549,7 +549,98 @@ news_event = {
 		}
 	}
 	option = {
-		name = news.1017.b
+		name = news.1018.b
+		trigger = { TAG = CHI }
+	}
+}
+
+news_event = {
+	id = news.1019
+	title = news.1019.t
+	desc = news.1019.d
+	picture = GFX_news_event_1019
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.1019.a
+		trigger = {
+			NOT = {
+				OR = {
+					TAG = CHI
+				}
+			}
+		}
+	}
+	option = {
+		name = news.1019.b
+		trigger = { TAG = CHI }
+	}
+}
+
+news_event = {
+	id = news.1020
+	title = news.1020.t
+	desc = news.1020.d
+	picture = GFX_news_event_1020
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.1020.a
+		trigger = {
+			NOT = {
+				OR = {
+					TAG = CHI
+				}
+			}
+		}
+	}
+	option = {
+		name = news.1020.b
+		trigger = { TAG = CHI }
+	}
+}
+
+news_event = {
+	id = news.1021
+	title = news.1021.t
+	desc = news.1021.d
+	picture = GFX_news_event_1021
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.1021.a
+		trigger = {
+			NOT = {
+				OR = {
+					TAG = CHI
+					TAG = ENG
+					TAG = FRA
+					TAG = POR
+				}
+			}
+		}
+	}
+	option = {
+		name = news.1021.b
+		trigger = { 
+			OR = {
+				TAG = ENG
+				TAG = FRA
+				TAG = POR
+			}
+		}
+	}
+	option = {
+		name = news.1021.c
 		trigger = { TAG = CHI }
 	}
 }

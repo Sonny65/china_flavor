@@ -51,7 +51,7 @@ focus_tree = {
 		mutually_exclusive = { focus = independent_development focus = restablish_united_front focus = arms_trade}
 		available =
 		{
-			num_of_factories > 0
+			num_of_factories > 35
 			country_exists = GER
 			NOT = { has_war_with = GER }
 			has_idea = german_advisors
@@ -315,6 +315,7 @@ focus_tree = {
 			is_puppet = no
 			country_exists = GER
 			NOT = { has_war_with = GER }
+			has_global_flag = fading_sun
 			GER = { has_government = fascism }
 		}
 		bypass = {
@@ -336,6 +337,7 @@ focus_tree = {
 			}
 			hidden_effect = {
 				news_event = { hours = 12 id = news.1005}
+				set_global_flag = chi_axis
 			}
 		}
 	}
@@ -346,8 +348,7 @@ focus_tree = {
 		prerequisite = { focus = blueshirt_coup }
 		available = {
 			is_puppet = no
-			num_of_factories > 0
-			has_global_flag = fading_sun
+			is_neighbor_of = FRA
 			NOT = { has_war_with = GER }
 			FRA = {
 				has_war_with = GER
@@ -398,6 +399,7 @@ focus_tree = {
 			430 = {
 				is_controlled_by = CHI
 			}
+			is_neighbor_of = RAJ
 		}
 		bypass = {
 			NOT = { country_exists = RAJ }
@@ -416,6 +418,15 @@ focus_tree = {
 		prerequisite = { focus = blueshirt_coup }
 		available = {
 			is_puppet = no
+			is_neighbor_of = SIA
+		}
+		bypass = {
+			OR = {
+				NOT = { country_exists = SIA }
+				SIA = {
+					is_puppet = yes
+				}
+			}
 		}
 		x = 8
 		y = 6
@@ -503,7 +514,7 @@ focus_tree = {
 		prerequisite = { focus = employ_western_officers }
 		mutually_exclusive = { focus = independent_development focus = extend_terms focus = restablish_united_front}
 		available = {
-			num_of_factories > 0
+			num_of_factories > 30
 			country_exists = ENG
 			NOT = { has_war_with = ENG }
 		}
@@ -773,6 +784,7 @@ focus_tree = {
 			}
 			hidden_effect = {
 				news_event = { hours = 12 id = news.1007}
+				set_global_flag = chi_ally
 			}
 		}
 	}
@@ -783,7 +795,7 @@ focus_tree = {
 		prerequisite = { focus = democratic_election }
 		available = {
 			is_puppet = no
-			num_of_factories > 0
+			is_neighbor_of = FRA
 			has_global_flag = fading_sun
 			NOT = { has_war_with = FRA }
 			country_exists = FRA
@@ -833,7 +845,7 @@ focus_tree = {
 		prerequisite = { focus = employ_western_officers }
 		mutually_exclusive = { focus = independent_development focus = extend_terms focus = arms_trade}
 		available = {
-			num_of_factories > 0
+			num_of_factories > 25
 			country_exists = SOV
 			NOT = { has_war_with = SOV }
 		}
@@ -1123,6 +1135,7 @@ focus_tree = {
 			hidden_effect = {
 				news_event = { hours = 12 id = news.1006}
 				annex_country = { target = PRC transfer_troops = yes }
+				set_global_flag = chi_comintern
 			}
 		}
 	}
@@ -1133,7 +1146,6 @@ focus_tree = {
 		prerequisite = { focus = revolutionize_kuomingtang }
 		available = {
 			is_puppet = no
-			num_of_factories > 0
 			has_global_flag = fading_sun
 			NOT = { has_war_with = SOV }
 			country_exists = SOV
@@ -1506,7 +1518,7 @@ focus_tree = {
 			date > 1937.7.1
 		}
 		x = 38
-		y = 1
+		y = 0
 		cost = 10
 		completion_reward = {
 			620 = {
@@ -1567,7 +1579,7 @@ focus_tree = {
 		icon = GFX_goal_generic_forceful_treaty
 		prerequisite = { focus = nanjing_decade }
 		x = 38
-		y = 2
+		y = 1
 		cost = 10
 		completion_reward = {
 			add_political_power = -150
@@ -1584,7 +1596,7 @@ focus_tree = {
 			has_defensive_war = yes
 		}
 		x = 38
-		y = 3
+		y = 2
 		cost = 10
 		completion_reward = {
 			add_political_power = -150
@@ -1603,7 +1615,7 @@ focus_tree = {
 			num_of_factories > 60
 		}
 		x = 38
-		y = 4
+		y = 3
 		cost = 10
 		completion_reward = {
 			add_political_power = -150
@@ -1619,13 +1631,11 @@ focus_tree = {
 			num_of_factories > 80
 		}
 		x = 38
-		y = 5
+		y = 4
 		cost = 10
 		completion_reward = {
 			add_political_power = -150
-			hidden_effect = {
-				CHI = { country_event = { days = 240 id = china.1021 } }
-			}
+			CHI = { country_event = { days = 2 id = china.1027 } }
 		}
 	}
 	
@@ -1633,6 +1643,18 @@ focus_tree = {
 		id = research_capacity_education                          
 		icon = GFX_focus_research
 		prerequisite = { focus = compulsory_education }
+		x = 38
+		y = 5
+		cost = 10
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	focus = {
+		id = research_capacity_last                          
+		icon = GFX_focus_research
+		prerequisite = { focus = tibet_modernization focus = expand_jiangnan_shipyard focus = daqing_oil_field focus = buyback_concessions }
 		x = 38
 		y = 6
 		cost = 10
@@ -1670,7 +1692,7 @@ focus_tree = {
 			}
 		}
 		x = 36
-		y = 3
+		y = 2
 		cost = 30
 		completion_reward = {
 			597 = {
@@ -1745,7 +1767,7 @@ focus_tree = {
 			}
 		}
 		x = 36
-		y = 4
+		y = 3
 		cost = 10
 		completion_reward = {
 			598 = {
@@ -1777,7 +1799,7 @@ focus_tree = {
 			}
 		}
 		x = 36
-		y = 5
+		y = 4
 		cost = 10
 		completion_reward = {
 			613 = {
@@ -1799,7 +1821,7 @@ focus_tree = {
 			}
 		}
 		x = 36
-		y = 6
+		y = 5
 		cost = 10
 		completion_reward = {
 			613 = {
@@ -1841,7 +1863,7 @@ focus_tree = {
 			}
 		}
 		x = 34
-		y = 3
+		y = 2
 		cost = 20
 		completion_reward = {
 			605 = {
@@ -1878,7 +1900,7 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = west_road                         
+		id = west_highway                         
 		icon = GFX_goal_generic_construct_infrastructure
 		prerequisite = { focus = southwest_development }
 		available = {
@@ -1893,7 +1915,7 @@ focus_tree = {
 			}
 		}
 		x = 34
-		y = 4
+		y = 3
 		cost = 20
 		completion_reward = {
 			605 = {
@@ -1919,6 +1941,434 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
+			}
+		}
+	}
+	
+	focus = {
+		id = reclaim_tibet                         
+		icon = GFX_goal_generic_more_territorial_claims
+		prerequisite = { focus = west_highway }
+		available = {
+			is_neighbor_of = TIB
+		}
+		bypass = {
+			NOT = {
+				322 = {
+					is_controlled_by = TIB
+				}
+			}
+		}
+		x = 34
+		y = 4
+		cost = 10
+		completion_reward = {
+			country_event = { id = china.1029 }
+		}
+	}
+	
+	focus = {
+		id = tibet_modernization
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = reclaim_tibet }
+		available = {
+			322 = {
+				is_controlled_by = CHI
+			}
+		}
+		x = 34
+		y = 5
+		cost = 25
+		completion_reward = {
+			322 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_resource = { type = chromium amount = 32 state = 322 }
+			}
+			hidden_effect = {
+				news_event = { days = 3 id = news.1019 }
+			}
+		}
+	}
+	
+	# Mid and South
+	focus = {
+		id = han_arsenal                       
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = next_decade }
+		available = {
+			600 = {
+				is_controlled_by = CHI
+			}
+			602 = {
+				is_controlled_by = CHI
+			}
+			606 = {
+				is_controlled_by = CHI
+			}
+			614 = {
+				is_controlled_by = CHI
+			}
+			620 = {
+				is_controlled_by = CHI
+			}
+		}
+		x = 40
+		y = 2
+		cost = 30
+		completion_reward = {
+			600 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			602 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			606 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			614 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			620 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = yue-han_railroad                         
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = han_arsenal }
+		available = {
+			600 = {
+				is_controlled_by = CHI
+			}
+			620 = {
+				is_controlled_by = CHI
+			}
+			592 = {
+				is_controlled_by = CHI
+			}
+			593 = {
+				is_controlled_by = CHI
+			}
+		}
+		x = 40
+		y = 3
+		cost = 20
+		completion_reward = {
+			600 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			620 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+			}
+			592 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			593 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = hainan_plantation                         
+		icon = GFX_goal_generic_production
+		prerequisite = { focus = yue-han_railroad }
+		available = {
+			591 = {
+				is_controlled_by = CHI
+			}
+		}
+		x = 40
+		y = 4
+		cost = 20
+		completion_reward = {
+			591 = {
+				add_resource = { type = rubber amount = 80 state = 591 }
+			}
+		}
+	}
+	
+	focus = {
+		id = buyback_concessions                         
+		icon = GFX_goal_generic_dangerous_deal
+		available = {
+			num_of_factories > 120
+			NOT = {
+				has_war_with = ENG
+				has_war_with = FRA
+				has_war_with = POR
+			}
+		}
+		prerequisite = { focus = hainan_plantation }
+		x = 40
+		y = 5
+		cost = 20
+		completion_reward = {
+			add_political_power = -200
+			country_event = { id = china.1032 }
+		}
+	}
+	
+	# North
+	focus = {
+		id = henan_aluminium                       
+		icon = GFX_goal_generic_production
+		prerequisite = { focus = next_decade }
+		available = {
+			607 = {
+				is_controlled_by = CHI
+			}
+		}
+		x = 42
+		y = 2
+		cost = 15
+		completion_reward = {
+			607 = {
+				add_resource = { type = aluminium amount = 45 state = 607 }
+			}
+		}
+	}
+	
+	focus = {
+		id = northeast_railroad_system                         
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = henan_aluminium }
+		available = {
+			714 = {
+				is_controlled_by = CHI
+			}
+			715 = {
+				is_controlled_by = CHI
+			}
+			716 = {
+				is_controlled_by = CHI
+			}
+			717 = {
+				is_controlled_by = CHI
+			}
+			608 = {
+				is_controlled_by = CHI
+			}
+			609 = {
+				is_controlled_by = CHI
+			}
+			610 = {
+				is_controlled_by = CHI
+			}
+			328 = {
+				is_controlled_by = CHI
+			}
+		}
+		x = 42
+		y = 3
+		cost = 25
+		completion_reward = {
+			714 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			715 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			716 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			717 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			608 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			609 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			610 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+			}
+			328 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = rejuvenate_heavy_industry                         
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = northeast_railroad_system }
+		available = {
+			714 = {
+				is_controlled_by = CHI
+			}
+			715 = {
+				is_controlled_by = CHI
+			}
+			716 = {
+				is_controlled_by = CHI
+			}
+			717 = {
+				is_controlled_by = CHI
+			}
+			
+		}
+		x = 42
+		y = 4
+		cost = 30
+		completion_reward = {
+			714 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			715 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			716 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			717 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = daqing_oil_field                       
+		icon = GFX_goal_generic_production2
+		prerequisite = { focus = rejuvenate_heavy_industry }
+		available = {
+			714 = {
+				is_controlled_by = CHI
+			}
+		}
+		x = 42
+		y = 5
+		cost = 20
+		completion_reward = {
+			714 = {
+				add_resource = { type = oil amount = 120 state = 607 }
+			}
+			hidden_effect = {
+				news_event = { days = 2 id = news.1020}
 			}
 		}
 	}

@@ -25,12 +25,12 @@ default = {
 CHI = {
 	male = {
 		names = { Tianyu Zhenghua Weiguo Baowei Gang Bing Wei Qu Han Er Runzhi Zhongzheng Zeming Jiuguo Yuhan De Biao Li Yu Liying Yuguo Ronggui Xian Bulan Yang Qi Yilun Haotian Ruhao Qing Qubing Guang
-			 Bai Hanshan Fu Juyi Sinian Juyi Yu Bei Bu Zhuo Shao Cao Fengjin Shi Bufang Jiuguo Jingwei Mugen Changgen Yunlong Yunfei Dayong Zhi}
+			 Bai Hanshan Fu Juyi Sinian Juyi Yu Bei Bu Zhuo Shao Cao Fengjin Shi Bufang Jiuguo Jingwei Mugen Changgen Yunlong Yunfei Dayong Zhi Weixiong Zhipeng Fanjin}
 	}
 	female = {
 		names = { }
 	}
-	surnames = { Zhao Wu Sun Ma Hu Peng Dong Ye Lü Tian Jiang Wei Ting Shen Fang Jin Qiu Wang Li Zhang Liu Chen Huang Liang Luo Kwong Hsia Zhu Mao Hu Liao Tan Deng Cheng Yang Gao Xie Ma Kong Dong Pan Yu}
+	surnames = { Song Bai Han Guo Zhao Wu Sun Ma Hu Peng Dong Ye Lü Tian Jiang Wei Ting Shen Fang Jin Qiu Wang Li Zhang Liu Chen Huang Liang Luo Kwong Hsia Zhu Mao Hu Liao Tan Deng Cheng Yang Gao Xie Ma Kong Dong Pan Yu}
 	callsigns = { "Welcome Rain" "The Jade Unicorn" "Leopard" "Thunderboli " "Whirl Wind" "Metal Lancer" "Black Gale" "Redhead Devil" "The Red Baron" "The Invulnerable" "Swift Death" "Ashen" 
 			"Supperssor" "Apollon" "Twin Tailed Scopion" "Twin Headed Snake" "Rash" "Red Eyed Lion" "Gaudy Tiger" "Grim Reaper" "Silver Knight" "Crimson Duke" "Flying Divinity" "Dagger Devil" }
 }

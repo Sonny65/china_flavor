@@ -112,6 +112,21 @@ spriteTypes = {
 	}
 	
 	spriteType = {
+		name = "GFX_report_event_pupil"
+		texturefile = "gfx/event_pictures/report_event_pupil.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_peking_university"
+		texturefile = "gfx/event_pictures/report_event_peking_university.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_tibet_farmer"
+		texturefile = "gfx/event_pictures/report_event_tibet_farmer.dds"
+	}
+	
+	spriteType = {
 		name = "GFX_news_event_1000"
 		texturefile = "gfx/event_pictures/news_event_1000.dds"
 	}
@@ -213,6 +228,11 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_news_event_1020"
 		texturefile = "gfx/event_pictures/news_event_1020.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_news_event_1021"
+		texturefile = "gfx/event_pictures/news_event_1021.dds"
 	}
 	
 	spriteType = {

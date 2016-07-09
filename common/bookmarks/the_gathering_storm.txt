@@ -11,8 +11,9 @@ bookmarks = {
 			history = "CHI_GATHERING_STORM_DESC"
 			ideology = neutrality
 			ideas = {
-				german_advisors
-				CHI_communist_uprisings
+				nominal_united
+				low_literacy_rate
+				unbalanced_industry
 			}
 		}
 		

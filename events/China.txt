@@ -338,7 +338,6 @@ country_event = {
 		hidden_effect = {
 			news_event = { days = 5 id = news.1009 }
 			add_named_threat = { threat = 5 name = france.1000.t }
-			set_global_flag = chi_demand_indochina
 		}
 		CHI = {
 			if = {
@@ -404,7 +403,6 @@ country_event = {
 	
 	option = {
 		name = china.1011.a
-		hidden_effect = { set_global_flag = chi_demand_indochina }
 	}
 }
 
@@ -1127,13 +1125,13 @@ country_event = {
 	
 	fire_only_once = yes
 	mean_time_to_happen = {
-		days = 30
+		days = 60
 	}
 	
 	trigger = {
 		tag = CHI
 		has_global_flag = fading_sun
-		has_global_flag = chi_demand_indochina
+		has_global_flag = chi_axis
 		GER = {
 			is_faction_leader = yes
 		}
@@ -1169,7 +1167,6 @@ country_event = {
 	option = {
 		name = china.1015.a
 		hidden_effect = {
-			set_global_flag = chi_demand_northwest
 			news_event = { days = 5 id = news.1011 }
 			if = {
 				limit = { country_exists = SIK }
@@ -1350,7 +1347,6 @@ country_event = {
 	
 	option = {
 		name = china.1016.a
-		hidden_effect = { set_global_flag = chi_demand_northwest }
 	}
 }
 
@@ -1369,7 +1365,7 @@ country_event = {
 	trigger = {
 		tag = CHI
 		has_global_flag = fading_sun
-		has_global_flag = chi_demand_northwest
+		has_global_flag = chi_comintern
 		SOV = {
 			is_faction_leader = yes
 		}
@@ -1474,7 +1470,6 @@ country_event = {
 	
 	option = {
 		name = china.1019.a
-		hidden_effect = { set_global_flag = indochina_livraison }
 	}
 }
 
@@ -1493,7 +1488,7 @@ country_event = {
 	trigger = {
 		tag = CHI
 		has_global_flag = fading_sun
-		has_global_flag = indochina_livraison
+		has_global_flag = chi_ally
 		ENG = {
 			is_faction_leader = yes
 		}
@@ -1674,7 +1669,153 @@ country_event = {
 	}
 }
 
-# event to puppet free india, player won't see this
+# start education
+country_event = {
+	id = china.1027
+	title = china.1027.t
+	desc = china.1027.d
+	picture = GFX_report_event_pupil
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = china.1027.a
+		hidden_effect = {
+			CHI = { country_event = { days = 360 id = china.1028 } }
+		}
+	}
+}
+
+# remove low literacy rate
+country_event = {
+	id = china.1028
+	title = china.1028.t
+	desc = china.1028.d
+	picture = GFX_report_event_peking_university
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = china.1028.a
+		remove_ideas = low_literacy_rate
+		every_state = {
+			limit = {
+				is_owned_by = CHI
+				is_core_of = CHI					
+			}
+			add_extra_state_shared_building_slots = 1
+		}
+	}
+}
+
+# china claim tibet
+country_event = {
+	id = china.1029
+	title = china.1029.t
+	desc = china.1029.d
+	picture = GFX_report_event_german_equipped_chinese_soliders
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = china.1029.a
+		ai_chance = {
+			factor = 90 
+			modifier = {
+				#If they have a fighting chance, they should stand their ground
+				factor = 0
+				strength_ratio = {
+					tag = CHI
+					ratio > 0.75
+				}
+			}
+		}
+		CHI = { 
+			country_event = { id = china.1030 }
+			effect_tooltip = { CHI = { annex_country = { target = ROOT transfer_troops = yes } } }
+		}
+	}
+	
+	option = {
+		name = china.1029.b
+		ai_chance = { factor = 10 }
+		CHI = { 
+			country_event = { id = china.1031 }
+			effect_tooltip = {
+				declare_war_on = {
+					target = TIB
+					type = annex_everything
+				}
+			}
+		}
+	}
+}
+
+# Tibet accepts and is annexed
+country_event = {
+	id = china.1030
+	title = china.1030.t
+	desc = china.1030.d
+	picture = GFX_report_event_tibet_farmer
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = china.1030.a
+		add_state_core = 322
+		annex_country = { target = TIB transfer_troops = yes }
+	}
+}
+
+# Tibet refuses, nations go to war 
+country_event = {
+	id = china.1031
+	title = china.1031.t
+	desc = china.1031.d
+	picture = GFX_report_event_chinese_soldiers_marching
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = china.1031.a
+		add_state_core = 322
+		declare_war_on = {
+			target = TIB
+			type = annex_everything
+		}
+	}
+}
+
+# Buyback Concessions
+country_event = {
+	id = china.1032
+	title = china.1032.t
+	desc = china.1032.d
+	picture = GFX_report_event_chinese_soldiers_marching
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = china.1032.a
+		transfer_state = 326
+		transfer_state = 728
+		transfer_state = 729
+		hidden_effect = {
+			ENG = {
+				add_political_power = 100
+			}
+			FRA = {
+				add_political_power = 50
+			}
+			POR = {
+				add_political_power = 50
+			}
+			news_event = { days = 6 id = news.1021}
+		}
+	}
+}
+
+# event to puppet, player won't see this
 country_event = {
 	id = china.2000
 	title = china.2000.t
